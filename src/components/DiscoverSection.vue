@@ -9,7 +9,7 @@
         Quality Craftmanship from build to delivery
       </p>
 
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2 mb-4 w-full xl:w-3/5">
+      <h2 class="text-3xl lg:text-4xl font-bold text-icon mt-2 mb-4 w-full xl:w-3/5">
         Discover the beauty of a handmade kitchen
       </h2>
 
