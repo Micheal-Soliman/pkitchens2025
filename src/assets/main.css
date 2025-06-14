@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
 
 @theme {
   --color-highlight: #d4b254;
+  --color-hover: #c8a74b;
   --color-title: #222222;
   --color-icon: #000000;
   --color-inactive: #eeeeee;
@@ -13,21 +15,22 @@
   --spacing-gutter: 20px;
 
   --radius-pill: 9999px;
+  --title-size: 42px;
 }
 
 @layer components {
-  .btn-main {
-    @apply bg-highlight text-white rounded-[var(--radius-pill)] px-8 py-3 uppercase text-sm hover:opacity-90 transition cursor-pointer;
+  .btn-primary {
+    @apply bg-highlight text-white rounded-[var(--radius-pill)] px-10 py-3 uppercase text-[15px] hover:bg-hover transition cursor-pointer shadow-sm;
   }
-  .btn-alt {
-    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-8 py-3 uppercase text-sm hover:bg-highlight hover:text-white transition cursor-pointer;
+  .btn-primary-outline {
+    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-10  py-3 uppercase text-[15px] hover:bg-hover hover:text-white transition cursor-pointer;
   }
-  .btn-dark-alt {
-    @apply bg-transparent border border-white rounded-[var(--radius-pill)] px-8 py-3 text-white hover:bg-white hover:text-icon text-sm tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer;
+  .btn-dark-outline {
+    @apply bg-transparent border border-white rounded-[var(--radius-pill)] px-8 py-3 text-white hover:bg-white hover:text-icon text-[15px] tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer;
   }
 
   .btn-cart {
-    @apply bg-transparent border border-white rounded-[var(--radius-pill)] text-white hover:bg-white hover:text-icon text-sm tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer font-light text-[13px];
+    @apply bg-transparent border border-white rounded-[var(--radius-pill)] text-white hover:bg-white hover:text-icon tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer font-light text-[13px];
 
     @apply px-3 py-2 md:px-8 md:py-2 border-0 md:border;
   }
@@ -39,4 +42,5 @@
 
 body {
   @apply text-body bg-white;
+  font-family: 'Roboto', sans-serif;
 }

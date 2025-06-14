@@ -55,7 +55,7 @@ const toggleMenu = () => {
           </div>
 
           <!-- Cart Button -->
-          <div class="md:flex mr-2 md:mr-2">
+          <div class="md:flex mr-0 md:mr-2">
             <button class="btn-cart flex items-center gap-2">
               <span class="hidden md:block">My Order</span>
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

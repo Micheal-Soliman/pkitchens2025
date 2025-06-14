@@ -13,9 +13,9 @@ import NavBar from './components/NavBar.vue'
   </header>
   <main>
     <HeroSection />
-    <!-- <DiscoverSection />
+    <DiscoverSection class="mt-1" />
     <FAQSection />
-    <CustomerGallery /> -->
+    <!-- <CustomerGallery /> -->
   </main>
   <!-- <Footer /> -->
 </template>
