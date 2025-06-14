@@ -10,7 +10,7 @@
       </div>
 
       <div class="w-full mt-8 md:mt-0 md:pl-12 lg:pl-16">
-        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider">
+        <p class="text-xs font-semibold text-highlight uppercase tracking-wider">
           Quality Craftmanship from build to delivery
         </p>
 

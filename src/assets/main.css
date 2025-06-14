@@ -1,1 +1,42 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-highlight: #d4b254;
+  --color-title: #222222;
+  --color-icon: #000000;
+  --color-inactive: #eeeeee;
+  --color-body: #777777;
+  --color-success: #77ff77;
+  --color-success: #ffffff;
+
+  --spacing-wrapper: 1300px;
+  --spacing-gutter: 20px;
+
+  --radius-pill: 9999px;
+}
+
+@layer components {
+  .btn-main {
+    @apply bg-highlight text-white rounded-[var(--radius-pill)] px-8 py-3 uppercase text-sm hover:opacity-90 transition cursor-pointer;
+  }
+  .btn-alt {
+    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-8 py-3 uppercase text-sm hover:bg-highlight hover:text-white transition cursor-pointer;
+  }
+  .btn-dark-alt {
+    @apply bg-transparent border border-white rounded-[var(--radius-pill)] px-8 py-3 text-white hover:bg-white hover:text-icon text-sm tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer;
+  }
+
+  .btn-cart {
+    @apply bg-transparent border border-white rounded-[var(--radius-pill)] text-white hover:bg-white hover:text-icon text-sm tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer font-light text-[13px];
+
+    @apply px-3 py-2 md:px-8 md:py-2 border-0 md:border;
+  }
+
+  .nav-item {
+    @apply text-white hover:text-gray-900 font-light text-sm tracking-wider uppercase transition-colors text-[13px];
+  }
+}
+
+body {
+  @apply text-body bg-white;
+}

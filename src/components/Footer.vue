@@ -113,17 +113,17 @@
               aria-label="Facebook"
               class="text-white hover:opacity-80 transition-opacity"
             >
-              <img class="w-6 h-6" src="@/assets/images/facebook.svg" alt="Facebook" />
+              <img class="w-6 h-6" src="@/assets/images/facebook-alt.svg" alt="Facebook" />
             </a>
             <a href="#" aria-label="Twitter" class="text-white hover:opacity-80 transition-opacity">
-              <img class="w-6 h-6" src="@/assets/images/x-logo.svg" alt="Twitter" />
+              <img class="w-6 h-6" src="@/assets/images/twitter-alt.svg" alt="Twitter" />
             </a>
             <a
               href="#"
               aria-label="Instagram"
               class="text-white hover:opacity-80 transition-opacity"
             >
-              <img class="w-6 h-6" src="@/assets/images/instagram.svg" alt="Instagram" />
+              <img class="w-6 h-6" src="@/assets/images/instagram-alt.svg" alt="Instagram" />
             </a>
           </div>
         </div>

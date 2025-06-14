@@ -13,11 +13,11 @@ import NavBar from './components/NavBar.vue'
   </header>
   <main>
     <HeroSection />
-    <DiscoverSection />
+    <!-- <DiscoverSection />
     <FAQSection />
-    <CustomerGallery />
+    <CustomerGallery /> -->
   </main>
-  <Footer />
+  <!-- <Footer /> -->
 </template>
 
 <style scoped></style>
