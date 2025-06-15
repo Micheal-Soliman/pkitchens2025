@@ -49,7 +49,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { ref } from 'vue'
+import { useSlider } from '@/composables/useSlider'
 import cover from '@/assets/images/cover.png'
 
 const slides = ref([
@@ -75,47 +76,16 @@ const slides = ref([
   },
 ])
 
-const currentIndex = ref(0)
-const totalSlides = computed(() => slides.value.length)
-let autoPlayInterval = null
-
-const carouselStyle = computed(() => ({
-  transform: `translateX(-${currentIndex.value * 100}%)`,
-}))
-
-function nextSlide() {
-  currentIndex.value = (currentIndex.value + 1) % totalSlides.value
-}
-
-function prevSlide() {
-  currentIndex.value = (currentIndex.value - 1 + totalSlides.value) % totalSlides.value
-}
-
-function goToSlide(index) {
-  currentIndex.value = index
-}
-
-function startAutoPlay() {
-  autoPlayInterval = setInterval(() => {
-    nextSlide()
-  }, 5000)
-}
-
-function pauseAutoPlay() {
-  clearInterval(autoPlayInterval)
-}
-
-function resumeAutoPlay() {
-  startAutoPlay()
-}
-
-onMounted(() => {
-  startAutoPlay()
-})
-
-onUnmounted(() => {
-  clearInterval(autoPlayInterval)
-})
+// slider composable
+const {
+  currentIndex,
+  carouselStyle,
+  nextSlide,
+  prevSlide,
+  goToSlide,
+  pauseAutoPlay,
+  resumeAutoPlay,
+} = useSlider(slides, { autoplay: true, interval: 5000 })
 </script>
 
 <style scoped>
@@ -180,7 +150,7 @@ onUnmounted(() => {
   border-radius: var(--radius-pill);
   padding: 0.75rem;
   cursor: pointer;
-  border: 3px solid var(--color-highlight);
+  border: 2px solid var(--color-highlight);
   background-color: var(--color-white);
   transition:
     color 0.3s ease,

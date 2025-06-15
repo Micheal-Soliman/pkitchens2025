@@ -45,6 +45,8 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useSlider } from '@/composables/useSlider'
+
 const testimonials = ref([
   {
     quote:
@@ -63,41 +65,15 @@ const testimonials = ref([
   },
 ])
 
-const currentIndex = ref(0)
-let autoPlayInterval = null
-const currentTestimonial = computed(() => {
-  return testimonials.value[currentIndex.value]
-})
-
-const nextSlide = () => {
-  currentIndex.value = (currentIndex.value + 1) % testimonials.value.length
-}
-const prevSlide = () => {
-  currentIndex.value =
-    (currentIndex.value - 1 + testimonials.value.length) % testimonials.value.length
-}
-
-function startAutoPlay() {
-  autoPlayInterval = setInterval(() => {
-    nextSlide()
-  }, 5000)
-}
-
-function pauseAutoPlay() {
-  clearInterval(autoPlayInterval)
-}
-
-function resumeAutoPlay() {
-  startAutoPlay()
-}
-
-onMounted(() => {
-  startAutoPlay()
-})
-
-onUnmounted(() => {
-  clearInterval(autoPlayInterval)
-})
+// slider composable
+const {
+  currentIndex,
+  currentItem: currentTestimonial,
+  nextSlide,
+  prevSlide,
+  pauseAutoPlay,
+  resumeAutoPlay,
+} = useSlider(testimonials, { autoplay: true, interval: 5000, transitionType: 'fade' })
 </script>
 
 <style scoped>
@@ -185,11 +161,11 @@ onUnmounted(() => {
     top: 1rem;
     border-radius: var(--radius-pill);
     padding: 0.75rem;
-    border: 1px solid var(--color-highlight);
+    border: 2px solid var(--color-highlight);
     background-color: var(--color-white);
     svg {
-      width: 20px;
-      height: 20px;
+      width: 14px;
+      height: 14px;
       stroke: var(--color-highlight);
       stroke-width: 5;
     }
@@ -200,6 +176,11 @@ onUnmounted(() => {
   }
   .left-arrow {
     right: 4.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .testimonial-slider {
+    padding: 4.5rem 0 3rem 0;
   }
 }
 </style>
