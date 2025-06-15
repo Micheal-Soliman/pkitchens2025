@@ -1,146 +1,170 @@
-<script setup></script>
-
 <template>
-  <footer class="bg-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="flex justify-center mb-10">
-        <img class="h-10" src="@/assets/images/brand-logo.svg" alt="MK Kitchens Logo" />
+  <footer class="footer">
+    <div class="footer-container mx-auto relative z-2">
+      <!-- brand-logo -->
+      <div class="brand-logo-wrapper">
+        <div class="brand-logo flex items-center gap-4">
+          <img src="@/assets/images/brand-logo.svg" alt="Logo" class="h-6" />
+        </div>
       </div>
 
-      <hr class="border-t border-slate-700" />
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-12">
+      <!-- Footer links -->
+      <div class="grid-container">
+        <!-- About Column -->
         <div>
-          <h3 class="text-xs font-semibold text-white uppercase tracking-wider">About</h3>
-          <ul class="mt-5 space-y-4">
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >Shop</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >Plan My Kitchen</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >About Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >Gallery</a
-              >
-            </li>
+          <h4 class="footer-heading">About</h4>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">SHOP</a></li>
+            <li><a href="#" class="footer-link">PLAN MY KITCHEN</a></li>
+            <li><a href="#" class="footer-link">ABOUT US</a></li>
+            <li><a href="#" class="footer-link">GALLERY</a></li>
           </ul>
         </div>
 
+        <!-- Service Column -->
         <div>
-          <h3 class="text-xs font-semibold text-white uppercase tracking-wider">Service</h3>
-          <ul class="mt-5 space-y-4">
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >FAQ</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >Contact</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >How to Buy</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >Downloads</a
-              >
-            </li>
+          <h4 class="footer-heading">Service</h4>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">FAQ</a></li>
+            <li><a href="#" class="footer-link">CONTACT</a></li>
+            <li><a href="#" class="footer-link">HOW TO BUY</a></li>
+            <li><a href="#" class="footer-link">DOWNLOADS</a></li>
           </ul>
         </div>
 
+        <!-- Info Column -->
         <div>
-          <h3 class="text-xs font-semibold text-white uppercase tracking-wider">Info</h3>
-          <ul class="mt-5 space-y-4">
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >Delivery</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >Terms</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-xs text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
-                >Privacy</a
-              >
-            </li>
+          <h4 class="footer-heading">Info</h4>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">DELIVERY</a></li>
+            <li><a href="#" class="footer-link">TERMS</a></li>
+            <li><a href="#" class="footer-link">PRIVACY</a></li>
           </ul>
         </div>
 
+        <!-- Follow Column -->
         <div>
-          <h3 class="text-xs font-semibold text-white uppercase tracking-wider">Follow</h3>
-          <div class="flex items-center space-x-4 mt-5">
-            <a
-              href="#"
-              aria-label="Facebook"
-              class="text-white hover:opacity-80 transition-opacity"
-            >
-              <img class="w-6 h-6" src="@/assets/images/facebook-alt.svg" alt="Facebook" />
+          <h4 class="footer-heading">Follow</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <img src="@/assets/images/facebook-alt.svg" alt="Facebook" />
             </a>
-            <a href="#" aria-label="Twitter" class="text-white hover:opacity-80 transition-opacity">
-              <img class="w-6 h-6" src="@/assets/images/twitter-alt.svg" alt="Twitter" />
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <img src="@/assets/images/instagram-alt.svg" alt="Instagram" />
             </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              class="text-white hover:opacity-80 transition-opacity"
-            >
-              <img class="w-6 h-6" src="@/assets/images/instagram-alt.svg" alt="Instagram" />
+            <a href="#" aria-label="Twitter" class="social-icon">
+              <img src="@/assets/images/twitter-alt.svg" alt="Twitter" />
             </a>
           </div>
         </div>
       </div>
 
-      <hr class="border-t border-slate-700" />
-
-      <div class="text-center pt-10">
-        <p class="text-xs text-gray-500 tracking-wide">
-          Copyright © MK Kitchens 2019 - All rights reserved.
-        </p>
-        <p class="text-xs text-gray-500 tracking-wide mt-1">
-          Responsive website design, Development & Hosting by Me.
-        </p>
+      <!-- Copyright -->
+      <div class="copyright-section">
+        <p>Copyright &copy; MK Kitchens 2019 - All rights reserved.</p>
+        <p class="mt-1">Responsive website design, Development & Hosting by Me.</p>
       </div>
     </div>
   </footer>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.footer {
+  background-image: url('../assets/images/Bitmap-5.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 3rem 1.5rem;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.94);
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1100px;
+}
+
+.brand-logo-wrapper {
+  margin-bottom: 3rem;
+}
+
+.brand-logo::before,
+.brand-logo::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--color-title);
+}
+
+.grid-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: left;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.copyright-section {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-title);
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer {
+    padding: 3rem 1rem;
+  }
+
+  .brand-logo-wrapper {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+</style>

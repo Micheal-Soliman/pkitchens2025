@@ -1,7 +1,7 @@
 <script setup>
 import CustomerGallery from './components/CustomerGallery.vue'
 import DiscoverSection from './components/DiscoverSection.vue'
-import FAQSection from './components/FAQSection.vue'
+import TestimonialSection from './components/TestimonialSection.vue'
 import Footer from './components/Footer.vue'
 import HeroSection from './components/HeroSection.vue'
 import NavBar from './components/NavBar.vue'
@@ -14,10 +14,10 @@ import NavBar from './components/NavBar.vue'
   <main>
     <HeroSection />
     <DiscoverSection class="mt-1" />
-    <FAQSection />
+    <TestimonialSection />
     <!-- <CustomerGallery /> -->
   </main>
-  <!-- <Footer /> -->
+  <Footer />
 </template>
 
 <style scoped></style>

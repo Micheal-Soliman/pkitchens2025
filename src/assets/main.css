@@ -9,7 +9,6 @@
   --color-inactive: #eeeeee;
   --color-body: #777777;
   --color-success: #77ff77;
-  --color-success: #ffffff;
 
   --spacing-wrapper: 1300px;
   --spacing-gutter: 20px;
@@ -37,6 +36,26 @@
 
   .nav-item {
     @apply text-white hover:text-gray-900 font-light text-sm tracking-wider uppercase transition-colors text-[13px];
+  }
+
+  /* footer */
+  .footer-heading {
+    @apply text-2xl font-semibold text-white capitalize mb-8;
+    letter-spacing: 0;
+  }
+
+  .footer-link {
+    @apply text-[13px] text-white uppercase tracking-wider font-light;
+    letter-spacing: 3px;
+  }
+
+  .footer-list {
+    @apply mt-5 space-y-2;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
   }
 }
 
