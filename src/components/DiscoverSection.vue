@@ -9,15 +9,15 @@
     </div>
 
     <div class="w-full info-wrapper mb-2 sm:mb-0">
-      <p class="text-xs font-semibold text-highlight uppercase tracking-wider">
+      <p class="font-normal font-body text-highlight uppercase">
         Quality Craftmanship from build to delivery
       </p>
 
-      <h2 class="text-3xl lg:text-4xl font-bold text-icon mt-2 mb-4 w-full xl:w-3/5">
+      <h2 class="text-3xl lg:text-4xl font-bold text-title mt-2 mb-4 w-full xl:w-3/5 heading">
         Discover the beauty of a handmade kitchen
       </h2>
 
-      <p class="leading-relaxed mb-4 w-full xl:w-3/4">
+      <p class="body-text font-normal mb-4 w-full xl:w-3/4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget est sit amet sapien
         venenatis maximus vel ut urna. Nam mauris ante, feugiat in finibus vitae, sollicitudin id
         purus. Ut imperdiet, magna eu pharetra tincidu, mauris.
@@ -35,6 +35,19 @@
   min-height: 50vh;
 }
 
+.heading {
+  font-size: 42px;
+  letter-spacing: 0;
+  line-height: 52px;
+  font-family: 'Helvetica-Bold', sans-serif;
+}
+
+.body-text {
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
 .cover img {
   transition:
     transform 0.3s ease,
@@ -50,11 +63,19 @@
   .discover {
     min-height: 40vh;
   }
+  .heading {
+    font-size: 32px;
+    line-height: 32px;
+  }
 }
 
 @media (max-width: 768px) {
   .discover {
     padding: 1rem;
+  }
+
+  .heading {
+    font-size: 28px;
   }
 }
 </style>

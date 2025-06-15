@@ -1,6 +1,6 @@
 <template>
   <div class="gallery-section">
-    <h2 class="text-[32px] font-bold text-title">Customer Gallery</h2>
+    <h2 class="heading font-bold text-title">Customer Gallery</h2>
     <div class="image-grid">
       <img
         v-for="(image, idx) in images"
@@ -22,12 +22,14 @@
   </div>
 </template>
 <script setup>
+import VueEasyLightbox from 'vue-easy-lightbox'
+import 'vue-easy-lightbox/external-css/vue-easy-lightbox.css'
 import { ref } from 'vue'
+
 import image1 from '@/assets/images/img-6.png'
 import image2 from '@/assets/images/img-3.png'
 import image3 from '@/assets/images/img-4.png'
 import image4 from '@/assets/images/img-5.png'
-import VueEasyLightbox from 'vue-easy-lightbox'
 
 const visible = ref(false)
 const index = ref(0)
@@ -54,6 +56,12 @@ const hideLightbox = () => {
   margin: 6rem 0;
   padding: 0 1rem;
   background-color: var(--color-white);
+}
+
+.heading {
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: 0;
 }
 
 .image-grid {

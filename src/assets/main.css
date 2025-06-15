@@ -9,6 +9,8 @@
   --color-inactive: #eeeeee;
   --color-body: #777777;
   --color-success: #77ff77;
+  --color-border-30: rgba(255, 255, 255, 0.3);
+  --color-border-20: rgba(255, 255, 255, 0.2);
 
   --spacing-wrapper: 1300px;
   --spacing-gutter: 20px;
@@ -18,8 +20,14 @@
 }
 
 @layer components {
+  .font-body {
+    @apply text-[13px];
+    letter-spacing: 3px;
+    line-height: 18px;
+  }
+
   .btn-primary {
-    @apply bg-highlight h-[60px] text-white rounded-[var(--radius-pill)] px-12 py-3 uppercase text-[15px] hover:bg-hover transition-colors cursor-pointer shadow-md;
+    @apply bg-highlight h-full sm:h-[60px] text-white rounded-[var(--radius-pill)] px-12 py-3 uppercase text-[13px] sm:text-[15px] hover:bg-hover transition-colors cursor-pointer shadow-md;
   }
   .btn-primary-outline {
     @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-12 py-3 uppercase text-[15px] hover:bg-hover hover:text-white transition cursor-pointer;
@@ -33,24 +41,32 @@
   }
 
   .btn-cart {
-    @apply bg-transparent border border-white rounded-[var(--radius-pill)] text-white hover:bg-white hover:text-icon tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer font-light text-[13px];
-
+    @apply bg-transparent border border-white rounded-[var(--radius-pill)] text-white hover:bg-white hover:text-icon tracking-wider uppercase transition-colors flex items-center cursor-pointer font-light text-[13px] h-full sm:h-[50px];
     @apply px-3 py-2 md:px-8 md:py-2 border-0 md:border;
+    font-weight: 400;
+    letter-spacing: 3px;
   }
 
   .nav-item {
-    @apply text-white hover:scale-105 font-light text-sm tracking-wider uppercase transition-transform text-[13px];
+    @apply text-white hover:scale-105 font-light uppercase transition-transform text-[13px];
+    font-weight: 400;
+    letter-spacing: 3px;
   }
 
   /* footer */
   .footer-heading {
     @apply text-2xl font-semibold text-white capitalize mb-8;
     letter-spacing: 0;
+    line-height: 42px;
+    letter-spacing: 0;
+    font-family: 'Helvetica-Bold', sans-serif;
   }
 
   .footer-link {
     @apply text-[13px] text-white uppercase hover:scale-105 transition-transform tracking-wider font-light;
     letter-spacing: 3px;
+    line-height: 30px;
+    font-size: 13px;
   }
 
   .footer-list {
@@ -60,6 +76,9 @@
   .social-icon {
     width: 40px;
     height: 40px;
+  }
+
+  @media (max-width: 576px) {
   }
 }
 

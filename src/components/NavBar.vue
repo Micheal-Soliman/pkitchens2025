@@ -12,7 +12,7 @@ const toggleMenu = () => {
   <nav class="absolute top-0 left-0 right-0 z-50">
     <div class="flex justify-center">
       <div
-        class="relative w-full max-w-[var(--spacing-wrapper)] px-[var(--spacing-gutter)] lg:px-0 border-b border-white flex items-center justify-between sm:h-[90px] h-16"
+        class="relative w-full max-w-[var(--spacing-wrapper)] px-[var(--spacing-gutter)] lg:px-0 border-b border-border-30 flex items-center justify-between sm:h-[90px] h-16"
       >
         <!-- Left Section -->
         <div class="flex items-center space-x-20">
@@ -40,12 +40,12 @@ const toggleMenu = () => {
         <!-- Center Logo -->
         <div class="absolute left-4 md:static md:flex-shrink-0 md:mx-auto">
           <a href="#">
-            <img src="@/assets/images/brand-logo.svg" alt="Logo" class="h-6" />
+            <img src="@/assets/images/brand-logo.svg" alt="Logo" class="h-8" />
           </a>
         </div>
 
         <!-- Right Section -->
-        <div class="flex items-center space-x-20">
+        <div class="flex items-center space-x-14">
           <!-- Right Nav -->
           <div
             class="hidden md:flex items-center space-x-8 text-white uppercase text-sm tracking-wide"
@@ -59,12 +59,12 @@ const toggleMenu = () => {
             <button class="btn-cart flex items-center gap-2">
               <span class="hidden md:block">My Order</span>
               <svg
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1"
+                stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >

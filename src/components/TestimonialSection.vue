@@ -1,8 +1,8 @@
 <template>
   <div class="testimonial-slider relative" @mouseenter="pauseAutoPlay" @mouseleave="resumeAutoPlay">
     <div class="slider-container flex flex-col items-center">
-      <p class="text-highlight uppercase text-[13px]">what our customers say</p>
-      <h2 class="text-[32px] font-bold leading-none mb-4 text-icon">
+      <p class="text-highlight uppercase font-body">what our customers say</p>
+      <h2 class="heading font-bold mb-4 text-title">
         Over 35 years experience designing handmade kitchens
       </h2>
 
@@ -20,10 +20,8 @@
         <!-- Testimonial Content -->
         <transition name="fade" mode="out-in">
           <div :key="currentIndex" class="testimonial-content">
-            <blockquote class="quote font-light mb-4">"{{ currentTestimonial.quote }}"</blockquote>
-            <cite class="customer text-[15px] font-light not-italic">
-              {{ currentTestimonial.customer }}</cite
-            >
+            <blockquote class="quote font-normal mb-4">"{{ currentTestimonial.quote }}"</blockquote>
+            <cite class="customer font-normal"> {{ currentTestimonial.customer }}</cite>
           </div>
         </transition>
 
@@ -44,7 +42,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 import { useSlider } from '@/composables/useSlider'
 
 const testimonials = ref([
@@ -90,11 +88,14 @@ const {
 .slider-container {
   max-width: 60%;
   width: 100%;
+}
 
-  h2 {
-    max-width: 600px;
-    line-height: 1.4;
-  }
+.slider-container h2 {
+  max-width: 600px;
+  line-height: 42px;
+  font-size: 32px;
+  letter-spacing: 0;
+  font-family: 'Helvetica-Bold', sans-serif;
 }
 
 .testimonial-wrapper {
@@ -108,7 +109,16 @@ const {
 
 .quote {
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 32px;
+  letter-spacing: 0;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.customer {
+  font-size: 15px;
+  line-height: 28px;
+  letter-spacing: 0;
+  font-style: normal;
 }
 
 .nav-arrow {

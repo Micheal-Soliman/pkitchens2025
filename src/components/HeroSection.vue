@@ -10,7 +10,7 @@
         >
           <div class="slide-overlay"></div>
           <div class="slide-content">
-            <p class="pre-heading uppercase font-light mb-2">{{ slide.preHeading }}</p>
+            <p class="font-body pre-heading uppercase mb-2">{{ slide.preHeading }}</p>
             <h1 class="slide-heading" v-html="slide.mainHeading"></h1>
             <button class="btn-primary">ORDER NOW</button>
           </div>
@@ -132,16 +132,18 @@ const {
 }
 
 .pre-heading {
-  font-size: 13px;
-  letter-spacing: 3px;
+  text-shadow: 0 0 4px var(--color-icon);
+  font-weight: 300;
 }
 
 .slide-heading {
+  font-family: 'Helvetica-Bold', sans-serif;
   font-size: 52px;
-  font-weight: 500;
-  line-height: 1;
+  font-weight: 700;
+  line-height: 58px;
   letter-spacing: -1px;
   margin-bottom: 1.4rem;
+  text-shadow: 0 0 25px #00000080;
 }
 
 .nav-arrow {

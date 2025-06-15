@@ -4,7 +4,7 @@
       <!-- brand-logo -->
       <div class="brand-logo-wrapper">
         <div class="brand-logo flex items-center gap-4">
-          <img src="@/assets/images/brand-logo.svg" alt="Logo" class="h-6" />
+          <img src="@/assets/images/brand-logo.svg" alt="Logo" class="h-8" />
         </div>
       </div>
 
@@ -103,7 +103,7 @@
   content: '';
   flex-grow: 1;
   height: 1px;
-  background-color: var(--color-title);
+  background-color: var(--color-border-20);
 }
 
 .grid-container {
@@ -139,7 +139,9 @@
   text-align: center;
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--color-title);
+  border-top: 1px solid var(--color-border-20);
+  letter-spacing: 0;
+  line-height: 26px;
   font-size: 13px;
 }
 
