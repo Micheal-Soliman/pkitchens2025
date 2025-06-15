@@ -13,10 +13,10 @@ import NavBar from './components/NavBar.vue'
 // Initialize AOS
 onMounted(() => {
   AOS.init({
-    duration: 1000,
+    duration: 800,
     once: false,
     mirror: true,
-    offset: 100,
+    offset: 120,
     easing: 'ease-in-out',
   })
 })
