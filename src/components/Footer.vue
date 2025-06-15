@@ -70,7 +70,7 @@
 
 <style scoped>
 .footer {
-  background-image: url('../assets/images/Bitmap-5.png');
+  background-image: url('../assets/images/cover.png');
   background-size: cover;
   background-position: center;
   position: relative;

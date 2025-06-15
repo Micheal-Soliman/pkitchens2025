@@ -22,7 +22,7 @@
     @apply bg-highlight text-white rounded-[var(--radius-pill)] px-10 py-3 uppercase text-[15px] hover:bg-hover transition cursor-pointer shadow-sm;
   }
   .btn-primary-outline {
-    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-10  py-3 uppercase text-[15px] hover:bg-hover hover:text-white transition cursor-pointer;
+    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-10 py-3 uppercase text-[15px] hover:bg-hover hover:text-white transition cursor-pointer;
   }
   .btn-dark-outline {
     @apply bg-transparent border border-white rounded-[var(--radius-pill)] px-8 py-3 text-white hover:bg-white hover:text-icon text-[15px] tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer;
@@ -56,18 +56,6 @@
   .social-icon {
     width: 40px;
     height: 40px;
-  }
-}
-
-@media (max-width: 576px) {
-  .nav-arrow {
-    position: absolute;
-    top: 0;
-    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] p-4  hover:bg-hover hover:text-white transition cursor-pointer;
-    svg {
-      width: 24px;
-      height: 24px;
-    }
   }
 }
 

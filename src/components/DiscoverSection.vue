@@ -1,7 +1,11 @@
 <template>
   <div class="discover flex flex-col lg:flex-row gap-2 lg:gap-8 items-center">
     <div class="w-full">
-      <img class="w-full h-full object-cover" src="@/assets/images/4.png" alt="Handmade kitchen" />
+      <img
+        class="w-full h-full object-cover"
+        src="@/assets/images/img-1.png"
+        alt="Handmade kitchen"
+      />
     </div>
 
     <div class="w-full p-4 lg:pr-2">

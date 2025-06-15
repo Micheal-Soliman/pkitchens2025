@@ -159,6 +159,7 @@ const prev = () => {
   .nav-arrow {
     position: absolute;
     top: 1rem;
+    border-radius: var(--radius-pill);
     padding: 0.75rem;
     border: 1px solid var(--color-highlight);
     background-color: var(--color-white);
