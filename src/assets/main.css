@@ -19,10 +19,10 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-highlight text-white rounded-[var(--radius-pill)] px-12 py-4 uppercase text-[15px] hover:bg-hover transition cursor-pointer shadow-sm;
+    @apply bg-highlight h-[60px] text-white rounded-[var(--radius-pill)] px-12 py-3 uppercase text-[15px] hover:bg-hover transition-colors cursor-pointer shadow-md;
   }
   .btn-primary-outline {
-    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-12 py-4 uppercase text-[15px] hover:bg-hover hover:text-white transition cursor-pointer;
+    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-12 py-3 uppercase text-[15px] hover:bg-hover hover:text-white transition cursor-pointer;
   }
   .btn-dark-outline {
     @apply bg-transparent border border-white rounded-[var(--radius-pill)] px-8 py-3 text-white hover:bg-white hover:text-icon text-[15px] tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer;

@@ -1,5 +1,5 @@
 <template>
-  <div class="testimonial-slider relative">
+  <div class="testimonial-slider relative" @mouseenter="pauseAutoPlay" @mouseleave="resumeAutoPlay">
     <div class="slider-container flex flex-col items-center">
       <p class="text-highlight uppercase text-[13px]">what our customers say</p>
       <h2 class="text-[32px] font-bold leading-none mb-4 text-icon">
@@ -8,7 +8,7 @@
 
       <div class="testimonial-wrapper flex items-start justify-between mb-4 sm:mb-6">
         <!-- Left Navigation Arrow -->
-        <button @click="prev" class="nav-arrow left-arrow" aria-label="Previous testimonial">
+        <button @click="prevSlide" class="nav-arrow left-arrow" aria-label="Previous testimonial">
           <svg viewBox="0 0 37 71">
             <path
               d="M34.6482 70.0035L0.707107 36.0623C0.51957 35.8748 0.414214 35.6204 0.414214 35.3552C0.414214 35.09 0.51957 34.8357 0.707107 34.6481L34.6482 0.706993C34.8358 0.519457 35.0901 0.414099 35.3553 0.414099C35.6206 0.414099 35.8749 0.519457 36.0624 0.706993C36.25 0.894529 36.3553 1.14888 36.3553 1.4141C36.3553 1.67932 36.25 1.93367 36.0624 2.12121L2.82843 35.3552L36.0624 68.5892C36.25 68.7768 36.3553 69.0311 36.3553 69.2964C36.3553 69.5616 36.25 69.8159 36.0624 70.0035C35.8749 70.191 35.6206 70.2964 35.3553 70.2964C35.0901 70.2964 34.8358 70.191 34.6482 70.0035Z"
@@ -28,7 +28,7 @@
         </transition>
 
         <!-- Right Arrow -->
-        <button @click="next" class="nav-arrow right-arrow" aria-label="Next testimonial">
+        <button @click="nextSlide" class="nav-arrow right-arrow" aria-label="Next testimonial">
           <svg viewBox="0 0 37 71">
             <path
               d="M2.06233 70.0036L36.0035 36.0624C36.191 35.8749 36.2964 35.6206 36.2964 35.3553C36.2964 35.0901 36.191 34.8358 36.0035 34.6482L2.06233 0.707107C1.87479 0.51957 1.62044 0.414213 1.35522 0.414213C1.09001 0.414213 0.835654 0.51957 0.648118 0.707107C0.460581 0.894643 0.355224 1.149 0.355224 1.41421C0.355224 1.67943 0.460581 1.93378 0.648118 2.12132L33.8821 35.3553L0.648118 68.5894C0.460581 68.7769 0.355224 69.0312 0.355224 69.2965C0.355224 69.5617 0.460581 69.816 0.648118 70.0036C0.835654 70.1911 1.09001 70.2965 1.35522 70.2965C1.62044 70.2965 1.87479 70.1911 2.06233 70.0036Z"
@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 const testimonials = ref([
   {
     quote:
@@ -64,17 +64,40 @@ const testimonials = ref([
 ])
 
 const currentIndex = ref(0)
+let autoPlayInterval = null
 const currentTestimonial = computed(() => {
   return testimonials.value[currentIndex.value]
 })
 
-const next = () => {
+const nextSlide = () => {
   currentIndex.value = (currentIndex.value + 1) % testimonials.value.length
 }
-const prev = () => {
+const prevSlide = () => {
   currentIndex.value =
     (currentIndex.value - 1 + testimonials.value.length) % testimonials.value.length
 }
+
+function startAutoPlay() {
+  autoPlayInterval = setInterval(() => {
+    nextSlide()
+  }, 5000)
+}
+
+function pauseAutoPlay() {
+  clearInterval(autoPlayInterval)
+}
+
+function resumeAutoPlay() {
+  startAutoPlay()
+}
+
+onMounted(() => {
+  startAutoPlay()
+})
+
+onUnmounted(() => {
+  clearInterval(autoPlayInterval)
+})
 </script>
 
 <style scoped>
@@ -167,7 +190,8 @@ const prev = () => {
     svg {
       width: 20px;
       height: 20px;
-      stroke-width: 10;
+      stroke: var(--color-highlight);
+      stroke-width: 5;
     }
   }
 
