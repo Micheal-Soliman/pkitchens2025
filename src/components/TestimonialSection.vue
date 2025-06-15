@@ -1,5 +1,5 @@
 <template>
-  <div class="testimonial-slider">
+  <div class="testimonial-slider relative">
     <div class="slider-container flex flex-col items-center">
       <p class="text-highlight uppercase text-[13px]">what our customers say</p>
       <h2 class="text-[32px] font-bold leading-none mb-4 text-icon">
@@ -152,12 +152,28 @@ const prev = () => {
   }
 }
 
-@media (max-width: 568px) {
+@media (max-width: 576px) {
   .testimonial-wrapper {
     flex-direction: column;
   }
   .nav-arrow {
-    display: none;
+    position: absolute;
+    top: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--color-highlight);
+    background-color: var(--color-white);
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke-width: 10;
+    }
+  }
+
+  .right-arrow {
+    right: 0.5rem;
+  }
+  .left-arrow {
+    right: 4rem;
   }
 }
 </style>

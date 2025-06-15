@@ -59,6 +59,18 @@
   }
 }
 
+@media (max-width: 576px) {
+  .nav-arrow {
+    position: absolute;
+    top: 0;
+    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] p-4  hover:bg-hover hover:text-white transition cursor-pointer;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
 body {
   @apply text-body bg-white;
   font-family: 'Roboto', sans-serif;
