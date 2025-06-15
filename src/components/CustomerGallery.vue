@@ -23,7 +23,6 @@
 </template>
 <script setup>
 import VueEasyLightbox from "vue-easy-lightbox";
-import "vue-easy-lightbox/external-css/vue-easy-lightbox.css";
 import { ref } from "vue";
 
 import image1 from "@/assets/images/img-6.png";

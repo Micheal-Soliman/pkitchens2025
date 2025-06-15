@@ -30,7 +30,7 @@ onMounted(() => {
     <HeroSection />
     <DiscoverSection class="mt-1" data-aos="fade-right" data-aos-delay="200" />
     <TestimonialSection data-aos="fade-up" data-aos-offset="150" />
-    <CustomerGallery data-aos="zoom-in" />
+    <CustomerGallery />
   </main>
   <Footer />
 </template>
