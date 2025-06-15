@@ -13,18 +13,22 @@
   --spacing-wrapper: 1300px;
   --spacing-gutter: 20px;
 
-  --radius-pill: 9999px;
+  --radius-pill: 30px;
   --title-size: 42px;
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-highlight text-white rounded-[var(--radius-pill)] px-10 py-3 uppercase text-[15px] hover:bg-hover transition cursor-pointer shadow-sm;
+    @apply bg-highlight text-white rounded-[var(--radius-pill)] px-12 py-4 uppercase text-[15px] hover:bg-hover transition cursor-pointer shadow-sm;
   }
   .btn-primary-outline {
-    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-10 py-3 uppercase text-[15px] hover:bg-hover hover:text-white transition cursor-pointer;
+    @apply border border-highlight text-highlight rounded-[var(--radius-pill)] px-12 py-4 uppercase text-[15px] hover:bg-hover hover:text-white transition cursor-pointer;
   }
   .btn-dark-outline {
+    @apply bg-transparent border border-white rounded-[var(--radius-pill)] px-8 py-3 text-white hover:bg-white hover:text-icon text-[15px] tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer;
+  }
+
+  .btn-dark {
     @apply bg-transparent border border-white rounded-[var(--radius-pill)] px-8 py-3 text-white hover:bg-white hover:text-icon text-[15px] tracking-wider uppercase transition-colors flex items-center space-x-2 cursor-pointer;
   }
 
@@ -35,7 +39,7 @@
   }
 
   .nav-item {
-    @apply text-white hover:text-gray-900 font-light text-sm tracking-wider uppercase transition-colors text-[13px];
+    @apply text-white hover:scale-105 font-light text-sm tracking-wider uppercase transition-transform text-[13px];
   }
 
   /* footer */
@@ -45,12 +49,12 @@
   }
 
   .footer-link {
-    @apply text-[13px] text-white uppercase tracking-wider font-light;
+    @apply text-[13px] text-white uppercase hover:scale-105 transition-transform tracking-wider font-light;
     letter-spacing: 3px;
   }
 
   .footer-list {
-    @apply mt-5 space-y-2;
+    @apply mt-5 space-y-3;
   }
 
   .social-icon {
@@ -72,4 +76,15 @@ body {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.5s ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
 }

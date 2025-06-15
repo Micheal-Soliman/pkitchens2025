@@ -17,13 +17,13 @@ const toggleMenu = () => {
         <!-- Left Section -->
         <div class="flex items-center space-x-20">
           <div class="hidden lg:flex items-center space-x-4">
-            <a href="#">
+            <a href="#" class="hover:scale-120 transition-transform">
               <img src="@/assets/images/facebook.svg" alt="Facebook" />
             </a>
-            <a href="#">
+            <a href="#" class="hover:scale-120 transition-transform">
               <img src="@/assets/images/twitter.svg" alt="Twitter" />
             </a>
-            <a href="#">
+            <a href="#" class="hover:scale-120 transition-transform">
               <img src="@/assets/images/instagram.svg" alt="Instagram" />
             </a>
           </div>
@@ -55,7 +55,7 @@ const toggleMenu = () => {
           </div>
 
           <!-- Cart Button -->
-          <div class="md:flex mr-0 md:mr-2">
+          <div class="md:flex mr-0">
             <button class="btn-cart flex items-center gap-2">
               <span class="hidden md:block">My Order</span>
               <svg
@@ -78,8 +78,8 @@ const toggleMenu = () => {
           </div>
 
           <!-- Mobile Toggle -->
-          <div class="md:hidden mt-1">
-            <button @click="toggleMenu" class="text-white focus:outline-none">
+          <div class="md:hidden mt-2 ml-1">
+            <button @click="toggleMenu" class="text-white focus:outline-none cursor-pointer">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
                   stroke-linecap="round"
@@ -95,18 +95,17 @@ const toggleMenu = () => {
     </div>
 
     <!-- Mobile Dropdown -->
-    <div
-      v-if="isMobileMenuOpen"
-      class="md:hidden bg-white text-gray-700 border-t border-gray-200 shadow"
-    >
-      <div class="flex flex-col px-4 py-4 space-y-3 text-sm uppercase tracking-wide">
-        <a href="#" class="hover:text-black">Shop</a>
-        <a href="#" class="hover:text-black">Plan My Kitchen</a>
-        <a href="#" class="hover:text-black">About Us</a>
-        <a href="#" class="hover:text-black">Gallery</a>
-        <button class="btn-dark-alt w-max mt-2">My Order</button>
+    <transition name="slide" mode="out-in">
+      <div v-if="isMobileMenuOpen" class="md:hidden bg-white border-t border-gray-200 shadow">
+        <div class="flex flex-col px-4 py-4 space-y-3 text-sm uppercase tracking-wide">
+          <a href="#" class="hover:text-black">Shop</a>
+          <a href="#" class="hover:text-black">Plan My Kitchen</a>
+          <a href="#" class="hover:text-black">About Us</a>
+          <a href="#" class="hover:text-black">Gallery</a>
+          <a href="#" class="hover:text-black">My Order</a>
+        </div>
       </div>
-    </div>
+    </transition>
   </nav>
 </template>
 

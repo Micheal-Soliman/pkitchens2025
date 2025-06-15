@@ -14,10 +14,10 @@
         <div>
           <h4 class="footer-heading">About</h4>
           <ul class="footer-list">
-            <li><a href="#" class="footer-link">SHOP</a></li>
-            <li><a href="#" class="footer-link">PLAN MY KITCHEN</a></li>
-            <li><a href="#" class="footer-link">ABOUT US</a></li>
-            <li><a href="#" class="footer-link">GALLERY</a></li>
+            <li class="footer-link"><a href="#">SHOP</a></li>
+            <li class="footer-link"><a href="#">PLAN MY KITCHEN</a></li>
+            <li class="footer-link"><a href="#">ABOUT US</a></li>
+            <li class="footer-link"><a href="#">GALLERY</a></li>
           </ul>
         </div>
 
@@ -25,10 +25,10 @@
         <div>
           <h4 class="footer-heading">Service</h4>
           <ul class="footer-list">
-            <li><a href="#" class="footer-link">FAQ</a></li>
-            <li><a href="#" class="footer-link">CONTACT</a></li>
-            <li><a href="#" class="footer-link">HOW TO BUY</a></li>
-            <li><a href="#" class="footer-link">DOWNLOADS</a></li>
+            <li class="footer-link"><a href="#">FAQ</a></li>
+            <li class="footer-link"><a href="#">CONTACT</a></li>
+            <li class="footer-link"><a href="#">HOW TO BUY</a></li>
+            <li class="footer-link"><a href="#">DOWNLOADS</a></li>
           </ul>
         </div>
 
@@ -36,9 +36,11 @@
         <div>
           <h4 class="footer-heading">Info</h4>
           <ul class="footer-list">
-            <li><a href="#" class="footer-link">DELIVERY</a></li>
-            <li><a href="#" class="footer-link">TERMS</a></li>
-            <li><a href="#" class="footer-link">PRIVACY</a></li>
+            <li class="footer-link">
+              <a href="#">DELIVERY</a>
+            </li>
+            <li class="footer-link"><a href="#">TERMS</a></li>
+            <li class="footer-link"><a href="#">PRIVACY</a></li>
           </ul>
         </div>
 

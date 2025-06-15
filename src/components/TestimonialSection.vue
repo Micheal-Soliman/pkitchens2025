@@ -21,7 +21,9 @@
         <transition name="fade" mode="out-in">
           <div :key="currentIndex" class="testimonial-content">
             <blockquote class="quote font-light mb-4">"{{ currentTestimonial.quote }}"</blockquote>
-            <cite class="author text-[15px] font-light"> {{ currentTestimonial.author }}</cite>
+            <cite class="customer text-[15px] font-light not-italic">
+              {{ currentTestimonial.customer }}</cite
+            >
           </div>
         </transition>
 
@@ -47,17 +49,17 @@ const testimonials = ref([
   {
     quote:
       'Since my first contact I have received a very high level of customer service and advice with my kitchen plans. Ben responded very quickly to all of my emails and delivery of the kitchen was as planned.',
-    author: 'Ann, Dundee',
+    customer: 'Ann, Dundee',
   },
   {
     quote:
       'The craftsmanship is exceptional. Our new kitchen is not only beautiful but also incredibly functional. The team was professional and a pleasure to work with from start to finish.',
-    author: 'John & Jane, Edinburgh',
+    customer: 'John & Jane, Edinburgh',
   },
   {
     quote:
       'We are absolutely thrilled with the final result. It has completely transformed our home. The attention to detail is second to none. Highly recommended!',
-    author: 'Sarah, Glasgow',
+    customer: 'Sarah, Glasgow',
   },
 ])
 
