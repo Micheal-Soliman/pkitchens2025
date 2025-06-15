@@ -40,7 +40,7 @@ const toggleMenu = () => {
         <!-- Center Logo -->
         <div class="absolute left-4 md:static md:flex-shrink-0 md:mx-auto">
           <a href="#">
-            <img src="@/assets/images/brand-logo.svg" alt="Logo" class="h-8" />
+            <img src="@/assets/images/brand-logo.svg" alt="Logo" class="h-6 sm:h-8" />
           </a>
         </div>
 
