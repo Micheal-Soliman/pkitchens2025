@@ -80,8 +80,8 @@ const prev = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5f4f0;
-  padding: 5rem 2rem;
+  background-color: var(--color-inactive);
+  padding: 3rem 2rem;
   text-align: center;
   min-height: 60vh;
 }
@@ -121,7 +121,6 @@ const prev = () => {
 }
 
 .nav-arrow:hover {
-  color: #333;
   transform: scale(1.1);
 }
 
@@ -171,10 +170,10 @@ const prev = () => {
   }
 
   .right-arrow {
-    right: 0.5rem;
+    right: 1rem;
   }
   .left-arrow {
-    right: 4rem;
+    right: 4.5rem;
   }
 }
 </style>

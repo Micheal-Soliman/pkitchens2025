@@ -1,6 +1,6 @@
 <template>
-  <div class="discover flex flex-col lg:flex-row gap-2 lg:gap-8 items-center">
-    <div class="w-full">
+  <div class="discover flex flex-col md:flex-row gap-4 lg:gap-8 items-center">
+    <div class="w-full cover overflow-hidden">
       <img
         class="w-full h-full object-cover"
         src="@/assets/images/img-1.png"
@@ -8,7 +8,7 @@
       />
     </div>
 
-    <div class="w-full p-4 lg:pr-2">
+    <div class="w-full info-wrapper mb-2 sm:mb-0">
       <p class="text-xs font-semibold text-highlight uppercase tracking-wider">
         Quality Craftmanship from build to delivery
       </p>
@@ -28,4 +28,33 @@
   </div>
 </template>
 
-<script setup></script>
+<style scoped>
+.discover {
+  display: flex;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.cover img {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cover img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 991px) {
+  .discover {
+    min-height: 40vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .discover {
+    padding: 1rem;
+  }
+}
+</style>
