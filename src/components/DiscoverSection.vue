@@ -39,7 +39,7 @@
   font-size: 42px;
   letter-spacing: 0;
   line-height: 52px;
-  font-family: 'Helvetica-Bold', sans-serif;
+  font-family: "Helvetica-Bold", sans-serif;
 }
 
 .body-text {

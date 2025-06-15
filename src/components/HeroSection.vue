@@ -49,32 +49,32 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useSlider } from '@/composables/useSlider'
-import cover from '@/assets/images/cover.png'
+import { ref } from "vue";
+import { useSlider } from "@/composables/useSlider";
+import cover from "@/assets/images/cover.png";
 
 const slides = ref([
   {
     id: 1,
     image: cover,
-    preHeading: 'DESIGN AND ORDER YOUR NEW KITCHEN ONLINE TODAY',
-    mainHeading: 'Bespoke & made to measure<br>handmade kitchen design',
+    preHeading: "DESIGN AND ORDER YOUR NEW KITCHEN ONLINE TODAY",
+    mainHeading: "Bespoke & made to measure<br>handmade kitchen design",
   },
   {
     id: 2,
     image:
-      'https://images.unsplash.com/photo-1722649957265-372809976610?q=80&w=2940&auto=format&fit=crop',
-    preHeading: 'AWARD-WINNING CRAFTSMANSHIP',
-    mainHeading: 'Experience the Art of<br>Custom Kitchens',
+      "https://images.unsplash.com/photo-1722649957265-372809976610?q=80&w=2940&auto=format&fit=crop",
+    preHeading: "AWARD-WINNING CRAFTSMANSHIP",
+    mainHeading: "Experience the Art of<br>Custom Kitchens",
   },
   {
     id: 3,
     image:
-      'https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?q=80&w=2940&auto=format&fit=crop',
-    preHeading: 'SUSTAINABLE & ETHICAL',
-    mainHeading: 'Luxury Kitchens with a<br>Conscience',
+      "https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?q=80&w=2940&auto=format&fit=crop",
+    preHeading: "SUSTAINABLE & ETHICAL",
+    mainHeading: "Luxury Kitchens with a<br>Conscience",
   },
-])
+]);
 
 // slider composable
 const {
@@ -85,7 +85,7 @@ const {
   goToSlide,
   pauseAutoPlay,
   resumeAutoPlay,
-} = useSlider(slides, { autoplay: true, interval: 5000 })
+} = useSlider(slides, { autoplay: true, interval: 5000 });
 </script>
 
 <style scoped>
@@ -137,7 +137,7 @@ const {
 }
 
 .slide-heading {
-  font-family: 'Helvetica-Bold', sans-serif;
+  font-family: "Helvetica-Bold", sans-serif;
   font-size: 52px;
   font-weight: 700;
   line-height: 58px;

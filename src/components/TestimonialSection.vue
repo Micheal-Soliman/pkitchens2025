@@ -42,26 +42,26 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useSlider } from '@/composables/useSlider'
+import { ref } from "vue";
+import { useSlider } from "@/composables/useSlider";
 
 const testimonials = ref([
   {
     quote:
-      'Since my first contact I have received a very high level of customer service and advice with my kitchen plans. Ben responded very quickly to all of my emails and delivery of the kitchen was as planned.',
-    customer: 'Ann, Dundee',
+      "Since my first contact I have received a very high level of customer service and advice with my kitchen plans. Ben responded very quickly to all of my emails and delivery of the kitchen was as planned.",
+    customer: "Ann, Dundee",
   },
   {
     quote:
-      'The craftsmanship is exceptional. Our new kitchen is not only beautiful but also incredibly functional. The team was professional and a pleasure to work with from start to finish.',
-    customer: 'John & Jane, Edinburgh',
+      "The craftsmanship is exceptional. Our new kitchen is not only beautiful but also incredibly functional. The team was professional and a pleasure to work with from start to finish.",
+    customer: "John & Jane, Edinburgh",
   },
   {
     quote:
-      'We are absolutely thrilled with the final result. It has completely transformed our home. The attention to detail is second to none. Highly recommended!',
-    customer: 'Sarah, Glasgow',
+      "We are absolutely thrilled with the final result. It has completely transformed our home. The attention to detail is second to none. Highly recommended!",
+    customer: "Sarah, Glasgow",
   },
-])
+]);
 
 // slider composable
 const {
@@ -71,7 +71,7 @@ const {
   prevSlide,
   pauseAutoPlay,
   resumeAutoPlay,
-} = useSlider(testimonials, { autoplay: true, interval: 5000, transitionType: 'fade' })
+} = useSlider(testimonials, { autoplay: true, interval: 5000, transitionType: "fade" });
 </script>
 
 <style scoped>
@@ -95,7 +95,7 @@ const {
   line-height: 42px;
   font-size: 32px;
   letter-spacing: 0;
-  font-family: 'Helvetica-Bold', sans-serif;
+  font-family: "Helvetica-Bold", sans-serif;
 }
 
 .testimonial-wrapper {
@@ -111,7 +111,7 @@ const {
   font-size: 18px;
   line-height: 32px;
   letter-spacing: 0;
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 
 .customer {

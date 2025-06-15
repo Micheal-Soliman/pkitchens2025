@@ -22,28 +22,28 @@
   </div>
 </template>
 <script setup>
-import VueEasyLightbox from 'vue-easy-lightbox'
-import 'vue-easy-lightbox/external-css/vue-easy-lightbox.css'
-import { ref } from 'vue'
+import VueEasyLightbox from "vue-easy-lightbox";
+import "vue-easy-lightbox/external-css/vue-easy-lightbox.css";
+import { ref } from "vue";
 
-import image1 from '@/assets/images/img-6.png'
-import image2 from '@/assets/images/img-3.png'
-import image3 from '@/assets/images/img-4.png'
-import image4 from '@/assets/images/img-5.png'
+import image1 from "@/assets/images/img-6.png";
+import image2 from "@/assets/images/img-3.png";
+import image3 from "@/assets/images/img-4.png";
+import image4 from "@/assets/images/img-5.png";
 
-const visible = ref(false)
-const index = ref(0)
+const visible = ref(false);
+const index = ref(0);
 
-const images = ref([image4, image1, image2, image3])
+const images = ref([image4, image1, image2, image3]);
 
 const showLightbox = (imageIndex) => {
-  index.value = imageIndex
-  visible.value = true
-}
+  index.value = imageIndex;
+  visible.value = true;
+};
 
 const hideLightbox = () => {
-  visible.value = false
-}
+  visible.value = false;
+};
 </script>
 
 <style scoped>

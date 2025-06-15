@@ -72,7 +72,7 @@
 
 <style scoped>
 .footer {
-  background-image: url('../assets/images/cover.png');
+  background-image: url("../assets/images/cover.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -80,7 +80,7 @@
 }
 
 .footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -100,7 +100,7 @@
 
 .brand-logo::before,
 .brand-logo::after {
-  content: '';
+  content: "";
   flex-grow: 1;
   height: 1px;
   background-color: var(--color-border-20);
