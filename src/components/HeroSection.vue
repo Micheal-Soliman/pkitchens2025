@@ -12,7 +12,7 @@
           <div class="slide-content">
             <p class="font-body pre-heading uppercase mb-2">{{ slide.preHeading }}</p>
             <h1 class="slide-heading" v-html="slide.mainHeading"></h1>
-            <button class="btn-primary">ORDER NOW</button>
+            <button class="btn-primary mx-auto">ORDER NOW</button>
           </div>
         </div>
       </div>
