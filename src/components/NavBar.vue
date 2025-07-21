@@ -16,32 +16,22 @@ const toggleMenu = () => {
       >
         <!-- Left Section -->
         <div class="flex items-center space-x-20">
-          <div class="hidden lg:flex items-center space-x-4">
-            <a href="#" class="hover:scale-120 transition-transform">
-              <img src="@/assets/images/facebook.svg" alt="Facebook" />
-            </a>
-            <a href="#" class="hover:scale-120 transition-transform">
-              <img src="@/assets/images/twitter.svg" alt="Twitter" />
-            </a>
-            <a href="#" class="hover:scale-120 transition-transform">
-              <img src="@/assets/images/instagram.svg" alt="Instagram" />
-            </a>
-          </div>
 
           <!-- Left Nav -->
           <div
             class="hidden md:flex items-center space-x-10 text-white uppercase text-sm tracking-wide"
           >
-            <a href="#" class="nav-item">Shop</a>
-            <a href="#" class="nav-item">Plan My Kitchen</a>
+            <router-link to="/" class="nav-item">Home</router-link>
+            <router-link to="/categories" class="nav-item">Categories</router-link>
+            <router-link to="/catalogue" class="nav-item">Catalogue</router-link>
           </div>
         </div>
 
         <!-- Center Logo -->
-        <div class="absolute left-4 md:static md:flex-shrink-0 md:mx-auto">
-          <a href="#">
+        <div class="flex-1 flex justify-center absolute left-0 right-0 mx-auto pointer-events-none">
+          <router-link to="/" class="pointer-events-auto">
             <img src="@/assets/images/brand-logo.svg" alt="Logo" class="h-6 sm:h-8" />
-          </a>
+          </router-link>
         </div>
 
         <!-- Right Section -->
@@ -50,31 +40,8 @@ const toggleMenu = () => {
           <div
             class="hidden md:flex items-center space-x-8 text-white uppercase text-sm tracking-wide"
           >
-            <a href="#" class="nav-item">About Us</a>
-            <a href="#" class="nav-item">Gallery</a>
-          </div>
-
-          <!-- Cart Button -->
-          <div class="md:flex mr-0">
-            <button class="btn-cart flex items-center gap-2">
-              <span class="hidden md:block">My Order</span>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="8" cy="21" r="1" />
-                <circle cx="19" cy="21" r="1" />
-                <path
-                  d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
-                />
-              </svg>
-            </button>
+            <router-link to="/about" class="nav-item">About Us</router-link>
+            <router-link to="/contact" class="nav-item">Contact Us</router-link>
           </div>
 
           <!-- Mobile Toggle -->
@@ -98,15 +65,20 @@ const toggleMenu = () => {
     <transition name="slide" mode="out-in">
       <div v-if="isMobileMenuOpen" class="md:hidden bg-white border-t border-gray-200 shadow">
         <div class="flex flex-col px-4 py-4 space-y-3 text-sm uppercase tracking-wide">
-          <a href="#" class="hover:text-black">Shop</a>
-          <a href="#" class="hover:text-black">Plan My Kitchen</a>
-          <a href="#" class="hover:text-black">About Us</a>
-          <a href="#" class="hover:text-black">Gallery</a>
-          <a href="#" class="hover:text-black">My Order</a>
+          <router-link to="/" class="hover:text-black">Home</router-link>
+          <router-link to="/categories" class="hover:text-black">Categories</router-link>
+          <router-link to="/catalogue" class="hover:text-black">Catalogue</router-link>
+          <router-link to="/about" class="hover:text-black">About Us</router-link>
+          <router-link to="/contact" class="hover:text-black">Contact Us</router-link>
         </div>
       </div>
     </transition>
   </nav>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+nav {
+  background: rgba(34, 34, 34, 0.95); /* خلفية شفافة داكنة مثل الهيدر */
+  box-shadow: 0 2px 10px #00000022;
+}
+</style>

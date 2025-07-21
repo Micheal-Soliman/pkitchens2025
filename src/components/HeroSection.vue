@@ -12,7 +12,7 @@
           <div class="slide-content">
             <p class="font-body pre-heading uppercase mb-2">{{ slide.preHeading }}</p>
             <h1 class="slide-heading" v-html="slide.mainHeading"></h1>
-            <button class="btn-primary mx-auto">ORDER NOW</button>
+            <router-link to="/categories" class="btn-primary mx-auto hero-btn-small">VIEW CATEGORIES</router-link>
           </div>
         </div>
       </div>
@@ -206,6 +206,26 @@ const {
 .line.active {
   background-color: var(--color-highlight);
   transform: scale(1.2);
+}
+
+.hero-btn-small {
+  min-width: unset !important;
+  width: auto !important;
+  height: unset !important;
+  padding: 1.3em !important;
+  font-size: 1.15rem !important;
+  border-radius: 25px !important;
+  background: #d4b254 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px #00000022 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+  line-height: 1.2 !important;
+  font-family: 'Helvetica-Bold', sans-serif !important;
+}
+.hero-btn-small:hover {
+  background: #c8a74b !important;
 }
 
 @media (max-width: 768px) {

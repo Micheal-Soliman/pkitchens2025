@@ -23,7 +23,7 @@
         purus. Ut imperdiet, magna eu pharetra tincidu, mauris.
       </p>
 
-      <button class="btn-primary">About Us</button>
+      <router-link to="/about" class="btn-primary btn-discover-small">About Us</router-link>
     </div>
   </div>
 </template>
@@ -57,6 +57,17 @@
 .cover img:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-discover-small {
+  min-width: unset !important;
+  width: auto !important;
+  padding: 1.3em 2em !important;
+  font-size: 1.08rem !important;
+  border-radius: 20px !important;
+  letter-spacing: 1.2px !important;
+  display: inline-block !important;
+  line-height: 1.2 !important;
 }
 
 @media (max-width: 991px) {

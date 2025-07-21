@@ -16,7 +16,7 @@
           <ul class="footer-list">
             <li class="footer-link"><a href="#">SHOP</a></li>
             <li class="footer-link"><a href="#">PLAN MY KITCHEN</a></li>
-            <li class="footer-link"><a href="#">ABOUT US</a></li>
+            <li class="footer-link"><router-link to="/about">ABOUT US</router-link></li>
             <li class="footer-link"><a href="#">GALLERY</a></li>
           </ul>
         </div>

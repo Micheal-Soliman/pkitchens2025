@@ -11,7 +11,7 @@
         @click="() => showLightbox(idx)"
       />
     </div>
-    <button class="btn-primary">View More</button>
+    <router-link to="/categories" class="btn-primary">View More</router-link>
 
     <vue-easy-lightbox
       :visible="visible"

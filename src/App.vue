@@ -2,15 +2,9 @@
 import { onMounted } from "vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-import CustomerGallery from "./components/CustomerGallery.vue";
-import DiscoverSection from "./components/DiscoverSection.vue";
-import TestimonialSection from "./components/TestimonialSection.vue";
-import Footer from "./components/Footer.vue";
-import HeroSection from "./components/HeroSection.vue";
 import NavBar from "./components/NavBar.vue";
+import Footer from "./components/Footer.vue";
 
-// Initialize AOS
 onMounted(() => {
   AOS.init({
     duration: 800,
@@ -27,10 +21,7 @@ onMounted(() => {
     <NavBar />
   </header>
   <main>
-    <HeroSection />
-    <DiscoverSection class="mt-1" data-aos="fade-right" data-aos-delay="200" />
-    <TestimonialSection data-aos="fade-up" data-aos-offset="150" />
-    <CustomerGallery />
+    <router-view />
   </main>
   <Footer />
 </template>
