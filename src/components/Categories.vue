@@ -78,8 +78,9 @@ useHead({
   width: 100%;
   background: #fff;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   padding: 2.5rem 1.5rem;
+  margin-top: 50px;
 }
 .categories-title {
   font-size: 2.5rem;

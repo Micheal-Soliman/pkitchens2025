@@ -1,17 +1,26 @@
 <template>
   <section class="item-gallery-wrapper">
     <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <ol>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/categories">Categories</router-link></li>
+          <li><router-link :to="`/category/${categorySlug}`">{{ categoryName }}</router-link></li>
+          <li aria-current="page">{{ itemName }}</li>
+        </ol>
+      </nav>
+
       <h1 class="gallery-title" data-aos="fade-down">{{ itemName }} Gallery</h1>
       <div class="gallery-grid">
-        <div v-for="(media, idx) in mediaList" :key="idx" class="gallery-media-wrapper" 
-             :data-aos="'zoom-in'" :data-aos-delay="100 * idx">
+        <div v-for="(media, idx) in mediaList" :key="idx" class="gallery-media-wrapper" :data-aos="'zoom-in'"
+          :data-aos-delay="100 * idx">
           <img v-if="media.type === 'image'" :src="media.url" class="gallery-media" @click="openLightbox(idx)" />
           <video v-else-if="media.type === 'video'" class="gallery-media" @click="openLightbox(idx)" muted>
             <source :src="media.url" :type="'video/' + media.format">
           </video>
           <div v-if="media.type === 'video'" class="video-play-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z"/>
+              <path d="M8 5v14l11-7z" />
             </svg>
           </div>
         </div>
@@ -21,14 +30,14 @@
       <div v-if="lightboxVisible" class="custom-lightbox" @click.self="closeLightbox">
         <button class="lightbox-close" @click="closeLightbox">&times;</button>
         <button class="lightbox-nav lightbox-prev" @click.stop="prevMedia">&#10094;</button>
-        
+
         <div class="lightbox-content">
           <img v-if="currentMedia.type === 'image'" :src="currentMedia.url" class="lightbox-media" />
           <video v-else-if="currentMedia.type === 'video'" ref="lightboxVideo" class="lightbox-media" controls autoplay>
             <source :src="currentMedia.url" :type="'video/' + currentMedia.format">
           </video>
         </div>
-        
+
         <button class="lightbox-nav lightbox-next" @click.stop="nextMedia">&#10095;</button>
       </div>
     </div>
@@ -42,6 +51,24 @@ import { useHead } from '@vueuse/head';
 
 const route = useRoute();
 const itemId = route.params.id;
+
+const categoryInfo = computed(() => {
+  if (itemId.includes('Kitchen') || itemId.includes('ARKOPA') || itemId.includes('Glossy') ||
+    itemId.includes('LG MATT') || itemId.includes('Matt plus') ||
+    itemId.includes('SoftTouch') || itemId.includes('UV-LAK')) {
+    return { name: 'Kitchen', slug: 'kitchens' };
+  } else if (itemId.includes('Dressing')) {
+    return { name: 'Dressing Room', slug: 'dressing-room' };
+  } else if (itemId.includes('furniture')) {
+    return { name: 'Furniture', slug: 'furniture' };
+  } else if (itemId.includes('Tv-Unit')) {
+    return { name: 'TV Units', slug: 'tv-unit' };
+  } else
+    return { name: 'Other', slug: 'other' };
+});
+
+const categoryName = computed(() => categoryInfo.value.name);
+const categorySlug = computed(() => categoryInfo.value.slug);
 
 const lightboxVisible = ref(false);
 const currentIndex = ref(0);
@@ -293,7 +320,7 @@ const openLightbox = (index) => {
 const closeLightbox = () => {
   lightboxVisible.value = false;
   document.body.style.overflow = ''; // إعادة تمكين التمرير
-  
+
   // إيقاف الفيديو عند إغلاق الـ lightbox
   if (lightboxVideo.value) {
     lightboxVideo.value.pause();
@@ -503,24 +530,81 @@ useHead({
   .gallery-media {
     height: 150px;
   }
-  
+
   .video-play-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .video-play-icon svg {
     width: 20px;
     height: 20px;
   }
-  
+
   .lightbox-nav {
     font-size: 1.5rem;
     padding: 0.5rem;
   }
-  
+
   .lightbox-close {
     font-size: 2rem;
+  }
+}
+
+.breadcrumb {
+  padding: 0.75rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: '›';
+  margin: 0 0.5rem;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: #444;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .breadcrumb {
+    padding: 0.5rem 0;
+  }
+
+  .breadcrumb ol {
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    margin: 0 0.3rem;
   }
 }
 </style>
