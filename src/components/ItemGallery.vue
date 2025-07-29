@@ -12,32 +12,36 @@
 
       <h1 class="gallery-title" data-aos="fade-down">{{ itemName }} Gallery</h1>
       <div class="gallery-grid">
-        <div v-for="(media, idx) in mediaList" :key="idx" class="gallery-media-wrapper" :data-aos="'zoom-in'"
-          :data-aos-delay="100 * idx">
+        <div v-for="(media, idx) in mediaList" :key="idx" class="gallery-media-wrapper" 
+             :data-aos="'zoom-in'" :data-aos-delay="100 * idx">
           <img v-if="media.type === 'image'" :src="media.url" class="gallery-media" @click="openLightbox(idx)" />
           <video v-else-if="media.type === 'video'" class="gallery-media" @click="openLightbox(idx)" muted>
             <source :src="media.url" :type="'video/' + media.format">
           </video>
           <div v-if="media.type === 'video'" class="video-play-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8 5v14l11-7z" />
+              <path d="M8 5v14l11-7z"/>
             </svg>
           </div>
         </div>
       </div>
 
       <!-- Lightbox المخصص -->
-      <div v-if="lightboxVisible" class="custom-lightbox" @click.self="closeLightbox">
+      <div v-if="lightboxVisible" class="custom-lightbox" 
+           @click.self="closeLightbox"
+           @touchstart="handleTouchStart"
+           @touchmove="handleTouchMove"
+           @touchend="handleTouchEnd">
         <button class="lightbox-close" @click="closeLightbox">&times;</button>
         <button class="lightbox-nav lightbox-prev" @click.stop="prevMedia">&#10094;</button>
-
+        
         <div class="lightbox-content">
           <img v-if="currentMedia.type === 'image'" :src="currentMedia.url" class="lightbox-media" />
           <video v-else-if="currentMedia.type === 'video'" ref="lightboxVideo" class="lightbox-media" controls autoplay>
             <source :src="currentMedia.url" :type="'video/' + currentMedia.format">
           </video>
         </div>
-
+        
         <button class="lightbox-nav lightbox-next" @click.stop="nextMedia">&#10095;</button>
       </div>
     </div>
@@ -45,17 +49,18 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useHead } from '@vueuse/head';
 
 const route = useRoute();
 const itemId = route.params.id;
 
+// تحديد الفئة بناءً على الـ itemId
 const categoryInfo = computed(() => {
-  if (itemId.includes('Kitchen') || itemId.includes('ARKOPA') || itemId.includes('Glossy') ||
-    itemId.includes('LG MATT') || itemId.includes('Matt plus') ||
-    itemId.includes('SoftTouch') || itemId.includes('UV-LAK')) {
+  if (itemId.includes('Kitchen') || itemId.includes('ARKOPA') || itemId.includes('Glossy') || 
+      itemId.includes('LG MATT') || itemId.includes('Matt plus') || 
+      itemId.includes('SoftTouch') || itemId.includes('UV-LAK')) {
     return { name: 'Kitchen', slug: 'kitchens' };
   } else if (itemId.includes('Dressing')) {
     return { name: 'Dressing Room', slug: 'dressing-room' };
@@ -63,8 +68,8 @@ const categoryInfo = computed(() => {
     return { name: 'Furniture', slug: 'furniture' };
   } else if (itemId.includes('Tv-Unit')) {
     return { name: 'TV Units', slug: 'tv-unit' };
-  } else
-    return { name: 'Other', slug: 'other' };
+  }
+  return { name: 'Other', slug: 'other' };
 });
 
 const categoryName = computed(() => categoryInfo.value.name);
@@ -311,17 +316,17 @@ const currentMedia = computed(() => {
   return mediaList.value[currentIndex.value] || {};
 });
 
+// دوال التنقل بين الوسائط
 const openLightbox = (index) => {
   currentIndex.value = index;
   lightboxVisible.value = true;
-  document.body.style.overflow = 'hidden'; // منع التمرير عند فتح الـ lightbox
+  document.body.style.overflow = 'hidden';
 };
 
 const closeLightbox = () => {
   lightboxVisible.value = false;
-  document.body.style.overflow = ''; // إعادة تمكين التمرير
-
-  // إيقاف الفيديو عند إغلاق الـ lightbox
+  document.body.style.overflow = '';
+  
   if (lightboxVideo.value) {
     lightboxVideo.value.pause();
     lightboxVideo.value.currentTime = 0;
@@ -348,12 +353,47 @@ const resetVideo = () => {
   }
 };
 
-// إغلاق الـ lightbox عند الضغط على زر Escape
+// دوال للتعامل مع السحب على الهاتف
+const touchStartX = ref(0);
+const touchEndX = ref(0);
+
+const handleTouchStart = (e) => {
+  touchStartX.value = e.touches[0].clientX;
+};
+
+const handleTouchMove = (e) => {
+  touchEndX.value = e.touches[0].clientX;
+};
+
+const handleTouchEnd = () => {
+  if (touchStartX.value - touchEndX.value > 50) {
+    // Swipe left - الانتقال للصورة التالية
+    nextMedia();
+  } else if (touchEndX.value - touchStartX.value > 50) {
+    // Swipe right - العودة للصورة السابقة
+    prevMedia();
+  }
+};
+
+// إعداد مستمعات لوحة المفاتيح
 onMounted(() => {
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightboxVisible.value) {
+  const handleKeyDown = (e) => {
+    if (!lightboxVisible.value) return;
+    
+    if (e.key === 'Escape') {
       closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+      prevMedia();
+    } else if (e.key === 'ArrowRight') {
+      nextMedia();
     }
+  };
+
+  window.addEventListener('keydown', handleKeyDown);
+
+  // تنظيف المستمع عند إلغاء التثبيت
+  onUnmounted(() => {
+    window.removeEventListener('keydown', handleKeyDown);
   });
 });
 
