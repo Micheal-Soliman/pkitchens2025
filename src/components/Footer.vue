@@ -4,79 +4,70 @@
       <!-- brand-logo -->
       <div class="brand-logo-wrapper">
         <div class="brand-logo flex items-center gap-4">
-          <img src="@/assets/images/brand-logo.svg" alt="Logo" class="h-8" />
+          <img src="@/assets/images/brand-logo.png" alt="Logo" class="h-20" />
         </div>
       </div>
 
       <!-- Footer links -->
       <div class="grid-container">
-        <!-- About Column -->
+        <!-- Main Sections -->
         <div>
-          <h4 class="footer-heading">About</h4>
-          <ul class="footer-list">
-            <li class="footer-link"><a href="#">SHOP</a></li>
-            <li class="footer-link"><a href="#">PLAN MY KITCHEN</a></li>
-            <li class="footer-link"><router-link to="/about">ABOUT US</router-link></li>
-            <li class="footer-link"><a href="#">GALLERY</a></li>
+          <h4 class="footer-heading">Sections</h4>
+          <ul class="footer-list footer-list-columns">
+            <li class="footer-link"><router-link to="/" @click="scrollToTop">Home</router-link></li>
+            <li class="footer-link"><router-link to="/category/tv-unit" @click="scrollToTop">TV Units</router-link></li>
+            <li class="footer-link"><router-link to="/category/dressing-room" @click="scrollToTop">Dressing Rooms</router-link></li>
+            <li class="footer-link"><router-link to="/contact" @click="scrollToTop">Contact Us</router-link></li>
+            <li class="footer-link"><router-link to="/category/furniture" @click="scrollToTop">Furniture</router-link></li>
+            <li class="footer-link"><router-link to="/about" @click="scrollToTop">About Us</router-link></li>
+            <li class="footer-link"><router-link to="/category/kitchens" @click="scrollToTop">Kitchens</router-link></li>
           </ul>
         </div>
-
-        <!-- Service Column -->
+        <!-- Contact Info -->
         <div>
-          <h4 class="footer-heading">Service</h4>
-          <ul class="footer-list">
-            <li class="footer-link"><a href="#">FAQ</a></li>
-            <li class="footer-link"><a href="#">CONTACT</a></li>
-            <li class="footer-link"><a href="#">HOW TO BUY</a></li>
-            <li class="footer-link"><a href="#">DOWNLOADS</a></li>
-          </ul>
-        </div>
-
-        <!-- Info Column -->
-        <div>
-          <h4 class="footer-heading">Info</h4>
+          <h4 class="footer-heading">Contact</h4>
           <ul class="footer-list">
             <li class="footer-link">
-              <a href="#">DELIVERY</a>
+              <a href="https://wa.me/+201153002700" target="_blank" rel="noopener" aria-label="WhatsApp">
+                Phone: +20 1153002700
+              </a>
             </li>
-            <li class="footer-link"><a href="#">TERMS</a></li>
-            <li class="footer-link"><a href="#">PRIVACY</a></li>
+            <li class="footer-link">
+              <a href="https://www.google.com/maps?q=Furniture+Point+Mall,1st+Settlement,New+Cairo" target="_blank" rel="noopener" aria-label="Location">
+                Address: Furniture Point Mall, 1st Settlement, New Cairo
+              </a>
+            </li>
+            <li class="footer-link">
+              <a href="mailto:P.kitchen.eg@gmail.com" aria-label="Email">
+                Email: P.kitchen.eg@gmail.com
+              </a>
+            </li>
           </ul>
-        </div>
-
-        <!-- Follow Column -->
-        <div>
-          <h4 class="footer-heading">Follow</h4>
-          <div class="social-icons">
-            <a href="#" aria-label="Facebook" class="social-icon">
-              <img src="@/assets/images/facebook-alt.svg" alt="Facebook" />
-            </a>
-            <a href="#" aria-label="Instagram" class="social-icon">
-              <img src="@/assets/images/instagram-alt.svg" alt="Instagram" />
-            </a>
-            <a href="#" aria-label="Twitter" class="social-icon">
-              <img src="@/assets/images/twitter-alt.svg" alt="Twitter" />
-            </a>
-          </div>
         </div>
       </div>
 
       <!-- Copyright -->
       <div class="copyright-section">
-        <p>Copyright &copy; MK Kitchens 2019 - All rights reserved.</p>
-        <p class="mt-1">Responsive website design, Development & Hosting by Me.</p>
+        <p>All rights reserved © P Kitchen 2025</p>
+        <p class="mt-1">Responsive website design, development & hosting by Signature.</p>
       </div>
     </div>
   </footer>
 </template>
 
+<script setup>
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
 <style scoped>
 .footer {
-  background-image: url("../assets/images/cover.png");
+  background-image: url("https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753700387/kitchens/DSC05847.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
-  padding: 3rem 1.5rem;
+  padding: 1.5rem 1rem;
 }
 
 .footer::before {
@@ -86,16 +77,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.94);
+  background-color: rgba(74, 96, 82, 0.94);
   z-index: 1;
 }
 
 .footer-container {
-  max-width: 1100px;
+  max-width: 700px;
 }
 
 .brand-logo-wrapper {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .brand-logo::before,
@@ -107,11 +98,11 @@
 }
 
 .grid-container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   text-align: left;
 }
 
@@ -137,38 +128,35 @@
 
 .copyright-section {
   text-align: center;
-  margin-top: 4rem;
-  padding-top: 2rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--color-border-20);
   letter-spacing: 0;
-  line-height: 26px;
-  font-size: 13px;
+  line-height: 22px;
+  font-size: 12px;
+  color: black;
 }
 
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    text-align: left;
-  }
-
-  .social-icons {
-    justify-content: flex-start;
-  }
+.footer-list-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 1.5rem;
+  padding: 0;
 }
-
-@media (max-width: 480px) {
-  .grid-container {
+@media (max-width: 900px) {
+  .footer-list-columns {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 0.4rem 0;
   }
-
-  .footer {
-    padding: 3rem 1rem;
+}
+@media (max-width: 480px) {
+  .footer-list-columns {
+    grid-template-columns: 1fr;
+    gap: 0.6rem 0;
   }
-
-  .brand-logo-wrapper {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+  .footer-link {
+    font-size: 1rem;
+    padding: 0.3rem 0;
   }
 }
 </style>

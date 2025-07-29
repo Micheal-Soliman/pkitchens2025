@@ -14,9 +14,9 @@ import DiscoverSection from './DiscoverSection.vue';
 import TestimonialSection from './TestimonialSection.vue';
 import CustomerGallery from './CustomerGallery.vue';
 useHead({
-  title: 'MK Kitchens | Home',
+  title: 'P Kitchen | Home',
   meta: [
-    { name: 'description', content: 'Discover bespoke, luxury handmade kitchens. Explore our gallery, testimonials, and more at MK Kitchens.' }
+    { name: 'description', content: 'Discover bespoke, luxury handmade kitchens. Explore our gallery, testimonials, and more at P Kitchen.' }
   ]
 });
 </script> 

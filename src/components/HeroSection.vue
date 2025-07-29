@@ -56,21 +56,21 @@ import cover from "@/assets/images/cover.png";
 const slides = ref([
   {
     id: 1,
-    image: cover,
+    image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753700387/kitchens/DSC05847.jpg",
     preHeading: "DESIGN AND ORDER YOUR NEW KITCHEN ONLINE TODAY",
     mainHeading: "Bespoke & made to measure<br>handmade kitchen design",
   },
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1722649957265-372809976610?q=80&w=2940&auto=format&fit=crop",
+      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753700585/kitchens/1.jpg",
     preHeading: "AWARD-WINNING CRAFTSMANSHIP",
     mainHeading: "Experience the Art of<br>Custom Kitchens",
   },
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?q=80&w=2940&auto=format&fit=crop",
+      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753700678/kitchens/DSC05594.jpg",
     preHeading: "SUSTAINABLE & ETHICAL",
     mainHeading: "Luxury Kitchens with a<br>Conscience",
   },
@@ -215,7 +215,8 @@ const {
   padding: 1.3em !important;
   font-size: 1.15rem !important;
   border-radius: 25px !important;
-  background: #d4b254 !important;
+  background: #8C7B60 !important; 
+  /* #4b8836 */
   color: #fff !important;
   box-shadow: 0 2px 8px #00000022 !important;
   letter-spacing: 1.5px !important;
@@ -225,25 +226,63 @@ const {
   font-family: 'Helvetica-Bold', sans-serif !important;
 }
 .hero-btn-small:hover {
-  background: #c8a74b !important;
+  background: #B5A58A !important;
 }
 
-@media (max-width: 768px) {
-  .slide-heading {
-    font-size: 2rem;
-  }
+@media (max-width: 1200px) {
   .hero-slider {
     height: 70vh;
   }
-  .nav-arrow {
-    padding: 0.75rem;
-    font-size: 1.25rem;
+  .slide-heading {
+    font-size: 2.2rem;
+    line-height: 2.5rem;
   }
 }
-
-@media (max-width: 576px) {
+@media (max-width: 900px) {
+  .hero-slider {
+    height: 55vh;
+  }
+  .slide-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .pre-heading {
+    font-size: 1rem;
+  }
+  .hero-btn-small {
+    font-size: 0.95rem !important;
+    padding: 1em 1.5em !important;
+  }
+}
+@media (max-width: 600px) {
+  .hero-slider {
+    height: 38vh;
+    min-height: 270px;
+  }
+  .slide-heading {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.7rem;
+  }
+  .pre-heading {
+    font-size: 0.85rem;
+  }
+  .hero-btn-small {
+    font-size: 0.8rem !important;
+    padding: 0.7em 1em !important;
+  }
   .nav-arrow {
-    top: 91%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    top: 90%;
+  }
+  .indicator-navigation {
+    bottom: 1rem;
+    gap: 0.4rem;
+  }
+  .line {
+    width: 30px;
+    height: 4px;
   }
 }
 </style>

@@ -22,20 +22,42 @@
 <script setup>
 import { ref } from 'vue';
 import { useHead } from '@vueuse/head';
-import img1 from '@/assets/images/img-1.png';
-import img2 from '@/assets/images/img-2.png';
-import img3 from '@/assets/images/img-3.png';
 
 const categories = ref([
-  { id: 1, name: 'Modern Kitchens', image: img1, aos: 'fade-up', delay: '200' },
-  { id: 2, name: 'Classic Kitchens', image: img2, aos: 'fade-up', delay: '400' },
-  { id: 3, name: 'Outdoor Kitchens', image: img3, aos: 'fade-up', delay: '600' },
+  { 
+    id: 'kitchens', 
+    name: 'Kitchens', 
+    image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753700387/kitchens/DSC05847.jpg", 
+    aos: 'fade-up', 
+    delay: '100' 
+  },
+  { 
+    id: 'furniture', 
+    name: 'Furniture', 
+    image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753699870/furniture/30bc4637-8d5a-4d7f-96cb-cc45ed93b5bc.jpg", 
+    aos: 'fade-up', 
+    delay: '200' 
+  },
+  { 
+    id: 'dressing-room', 
+    name: 'Dressing Room', 
+    image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753697931/dressing-room/A67I6969-Edit.jpg", 
+    aos: 'fade-up', 
+    delay: '300' 
+  },
+  { 
+    id: 'tv-unit', 
+    name: 'TV Units', 
+    image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753792111/Copy_of_A29I5892-Edit_st93vm.jpg",
+    aos: 'fade-up', 
+    delay: '400' 
+  },
 ]);
 
 useHead({
-  title: 'Categories | MK Kitchens',
+  title: 'Categories | P Kitchen',
   meta: [
-    { name: 'description', content: 'Browse our kitchen categories: Modern, Classic, Outdoor and more. Find your perfect kitchen style at MK Kitchens.' }
+    { name: 'description', content: 'Browse our kitchen categories: Modern, Classic, Outdoor and more. Find your perfect kitchen style at P Kitchen.' }
   ]
 });
 </script>
@@ -56,8 +78,9 @@ useHead({
   width: 100%;
   background: #fff;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   padding: 2.5rem 1.5rem;
+  margin-top: 50px;
 }
 .categories-title {
   font-size: 2.5rem;
@@ -68,9 +91,9 @@ useHead({
   letter-spacing: 1px;
 }
 .categories-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
   justify-content: center;
 }
 .category-card {
@@ -122,4 +145,4 @@ useHead({
     padding: 1.2rem 0.5rem;
   }
 }
-</style> 
+</style>

@@ -1,26 +1,25 @@
 <template>
   <div class="discover flex flex-col md:flex-row gap-4 lg:gap-8 items-center">
     <div class="w-full cover overflow-hidden">
-      <img
-        class="w-full h-full object-cover"
-        src="@/assets/images/img-1.png"
-        alt="Handmade kitchen"
-      />
+      <img class="w-full h-full object-cover"
+        src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753700387/kitchens/DSC05847.jpg"
+        alt="Handmade kitchen" />
     </div>
 
     <div class="w-full info-wrapper mb-2 sm:mb-0">
-      <p class="font-normal font-body text-highlight uppercase">
-        Quality Craftmanship from build to delivery
-      </p>
-
+      <!-- HEADLINE -->
       <h2 class="text-3xl lg:text-4xl font-bold text-title mt-2 mb-4 w-full xl:w-3/5 heading">
-        Discover the beauty of a handmade kitchen
+        Your Kitchen, Your Story.<br />
+        <span style="font-size:1.2rem; font-weight:400; display:block; margin-top:0.5rem;">Designed for Living. Built
+          for You.</span>
       </h2>
-
+      <!-- DESCRIPTION -->
       <p class="body-text font-normal mb-4 w-full xl:w-3/4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget est sit amet sapien
-        venenatis maximus vel ut urna. Nam mauris ante, feugiat in finibus vitae, sollicitudin id
-        purus. Ut imperdiet, magna eu pharetra tincidu, mauris.
+        We bring your kitchen dreams to life — with smart designs, quality craftsmanship, and attention to every
+        detail.<br />
+        Where kitchen dreams come true. Designed to fit your life, your space, and your style.<br />
+        <span style="display:block; margin-top:0.5rem;">At P.Kitchen, we make kitchen dreams come true - with thoughtful
+          design, quality craftsmanship, and a passion for every detail.</span>
       </p>
 
       <router-link to="/about" class="btn-primary btn-discover-small">About Us</router-link>
@@ -68,25 +67,51 @@
   letter-spacing: 1.2px !important;
   display: inline-block !important;
   line-height: 1.2 !important;
+  background-color: #8C7B60;
+}
+
+.btn-discover-small:hover {
+  background-color: #B5A58A;
+
 }
 
 @media (max-width: 991px) {
   .discover {
     min-height: 40vh;
   }
+
   .heading {
     font-size: 32px;
-    line-height: 32px;
+    line-height: 38px;
+    margin-bottom: 1.2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .discover {
-    padding: 1rem;
+  .heading {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 1rem;
   }
 
+  .body-text {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
   .heading {
-    font-size: 28px;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 0.7rem;
+  }
+
+  .body-text {
+    font-size: 12.5px;
+    line-height: 18px;
+    margin-bottom: 1rem;
   }
 }
 </style>

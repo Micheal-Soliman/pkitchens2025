@@ -21,7 +21,7 @@ onMounted(() => {
     <NavBar />
   </header>
   <main>
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </main>
   <Footer />
 </template>
