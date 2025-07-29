@@ -48,7 +48,7 @@ const categories = ref([
   { 
     id: 'tv-unit', 
     name: 'TV Units', 
-    image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753792111/Copy_of_A29I5892-Edit_st93vm.jpg",
+    image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753697931/dressing-room/A67I6969-Edit.jpg", // Placeholder
     aos: 'fade-up', 
     delay: '400' 
   },
@@ -78,9 +78,8 @@ useHead({
   width: 100%;
   background: #fff;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
   padding: 2.5rem 1.5rem;
-  margin-top: 50px;
 }
 .categories-title {
   font-size: 2.5rem;

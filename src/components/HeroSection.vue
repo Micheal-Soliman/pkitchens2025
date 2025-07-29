@@ -109,6 +109,7 @@ const {
   height: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   display: flex;
   justify-content: center;
@@ -129,6 +130,8 @@ const {
   text-align: center;
   z-index: 2;
   padding: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .pre-heading {
@@ -146,43 +149,40 @@ const {
   text-shadow: 0 0 25px #00000080;
 }
 
+/* ========== NAVIGATION ARROWS ========== */
 .nav-arrow {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   border-radius: var(--radius-pill);
   padding: 0.75rem;
   cursor: pointer;
   border: 2px solid var(--color-highlight);
   background-color: var(--color-white);
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease,
-    opacity 0.3s ease-in-out;
-  svg {
-    width: 20px;
-    height: 20px;
-    stroke: var(--color-highlight);
-    stroke-width: 5;
-  }
+  transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease-in-out;
   opacity: 0;
+  z-index: 5;
 }
-
+.nav-arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-highlight);
+  stroke-width: 5;
+}
 .hero-slider:hover .nav-arrow {
   opacity: 1;
 }
-
 .nav-arrow:hover {
   transform: scale(1.1);
 }
-
 .prev-arrow {
   left: 1.5rem;
 }
-
 .next-arrow {
   right: 1.5rem;
 }
 
+/* ========== SLIDER INDICATORS ========== */
 .indicator-navigation {
   position: absolute;
   bottom: 2rem;
@@ -192,7 +192,6 @@ const {
   gap: 0.75rem;
   z-index: 3;
 }
-
 .line {
   width: 50px;
   height: 5px;
@@ -202,12 +201,12 @@ const {
   transition: all 0.3s ease;
   padding: 0;
 }
-
 .line.active {
   background-color: var(--color-highlight);
   transform: scale(1.2);
 }
 
+/* ========== BUTTON ========== */
 .hero-btn-small {
   min-width: unset !important;
   width: auto !important;
@@ -215,8 +214,7 @@ const {
   padding: 1.3em !important;
   font-size: 1.15rem !important;
   border-radius: 25px !important;
-  background: #8C7B60 !important; 
-  /* #4b8836 */
+  background: #8C7B60 !important;
   color: #fff !important;
   box-shadow: 0 2px 8px #00000022 !important;
   letter-spacing: 1.5px !important;
@@ -229,6 +227,7 @@ const {
   background: #B5A58A !important;
 }
 
+/* ========== RESPONSIVE ========== */
 @media (max-width: 1200px) {
   .hero-slider {
     height: 70vh;
@@ -238,22 +237,55 @@ const {
     line-height: 2.5rem;
   }
 }
+
 @media (max-width: 900px) {
   .hero-slider {
     height: 55vh;
   }
   .slide-heading {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
   }
   .pre-heading {
     font-size: 1rem;
   }
   .hero-btn-small {
-    font-size: 0.95rem !important;
-    padding: 1em 1.5em !important;
+    font-size: 1rem !important;
+    padding: 1em 1.8em !important;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 45vh;
+  }
+  .slide-heading {
+    font-size: 1.35rem;
+    line-height: 1.8rem;
+  }
+  .pre-heading {
+    font-size: 0.95rem;
+  }
+  .hero-btn-small {
+    font-size: 0.9rem !important;
+    padding: 0.9em 1.5em !important;
+  }
+  .nav-arrow {
+    padding: 0.55rem;
+  }
+  .nav-arrow svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 4;
+  }
+  .prev-arrow {
+    left: 1rem;
+  }
+  .next-arrow {
+    right: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
   .hero-slider {
     height: 38vh;
@@ -272,9 +304,14 @@ const {
     padding: 0.7em 1em !important;
   }
   .nav-arrow {
-    padding: 0.5rem;
-    font-size: 1rem;
-    top: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.4rem;
+  }
+  .nav-arrow svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 3;
   }
   .indicator-navigation {
     bottom: 1rem;
@@ -285,4 +322,5 @@ const {
     height: 4px;
   }
 }
+
 </style>
