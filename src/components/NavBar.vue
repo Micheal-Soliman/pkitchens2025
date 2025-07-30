@@ -10,38 +10,32 @@ const toggleMenu = async () => {
 </script>
 
 <template>
-  <nav class="absolute top-0 left-0 right-0 z-50">
-    <div class="flex justify-center">
-      <div
-        class="relative w-full max-w-[var(--spacing-wrapper)] px-[var(--spacing-gutter)] lg:px-0 border-b border-border-30 flex items-center justify-between sm:h-[90px] h-16">
-        <!-- Left Section -->
-        <div class="flex items-center space-x-20">
-          <!-- Left Nav -->
-          <div class="hidden md:flex items-center space-x-10 text-white uppercase text-sm tracking-wide">
-            <router-link to="/" class="nav-item">Home</router-link>
-            <router-link to="/categories" class="nav-item">Categories</router-link>
-            <router-link to="/catalogue" class="nav-item">Catalogue</router-link>
-          </div>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#4A6052] shadow-md">
+    <div class="max-w-[var(--spacing-wrapper)] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 sm:h-[90px]">
+        <!-- Left Nav (Desktop) -->
+        <div class="hidden md:flex items-center space-x-6 text-white uppercase text-sm">
+          <router-link to="/" class="nav-item" exact-active-class="active-link">Home</router-link>
+          <router-link to="/categories" class="nav-item" exact-active-class="active-link">Categories</router-link>
+          <router-link to="/catalogue" class="nav-item" exact-active-class="active-link">Catalogue</router-link>
         </div>
 
         <!-- Center Logo -->
-        <div class="flex-1 flex justify-center absolute left-0 right-0 mx-auto pointer-events-none">
+        <div class="flex justify-center flex-1 absolute left-0 right-0 pointer-events-none">
           <router-link to="/" class="pointer-events-auto">
-            <img src="@/assets/images/brand-logo.png" alt="Logo" class="h-20 sm:h-24" />
+            <img src="@/assets/images/brand-logo.png" alt="Logo" class="h-14 sm:h-20" />
           </router-link>
         </div>
 
-        <!-- Right Section -->
-        <div class="flex items-center space-x-14">
-          <!-- Right Nav -->
-          <div class="hidden md:flex items-center space-x-8 text-white uppercase text-sm tracking-wide">
-            <router-link to="/about" class="nav-item">About Us</router-link>
-            <router-link to="/contact" class="nav-item">Contact Us</router-link>
+        <!-- Right Nav + Mobile Toggle -->
+        <div class="flex items-center space-x-6">
+          <div class="hidden md:flex text-white uppercase text-sm space-x-6">
+            <router-link to="/about" class="nav-item" exact-active-class="active-link">About Us</router-link>
+            <router-link to="/contact" class="nav-item" exact-active-class="active-link">Contact Us</router-link>
           </div>
-
           <!-- Mobile Toggle -->
-          <div class="md:hidden mt-2 ml-1">
-            <button @click="toggleMenu" class="text-white focus:outline-none cursor-pointer">
+          <div class="md:hidden">
+            <button @click="toggleMenu" class="text-white focus:outline-none">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M4 6h16M4 12h16M4 18h16" />
@@ -52,39 +46,44 @@ const toggleMenu = async () => {
       </div>
     </div>
 
-    <!-- Mobile Dropdown -->
+    <!-- Mobile Menu -->
     <transition name="mobile-fade">
-      <div v-if="isMobileMenuOpen" class="mobile-dropdown">
+      <div v-if="isMobileMenuOpen" class="md:hidden bg-white text-gray-800 shadow-lg">
         <div class="flex flex-col px-4 py-4 space-y-3 text-sm uppercase tracking-wide">
-          <router-link to="/" @click="toggleMenu">Home</router-link>
-          <router-link to="/categories" @click="toggleMenu">Categories</router-link>
-          <router-link to="/catalogue" @click="toggleMenu">Catalogue</router-link>
-          <router-link to="/about" @click="toggleMenu">About Us</router-link>
-          <router-link to="/contact" @click="toggleMenu">Contact Us</router-link>
+          <router-link to="/" @click="toggleMenu" exact-active-class="mobile-active-link">Home</router-link>
+          <router-link to="/categories" @click="toggleMenu" exact-active-class="mobile-active-link">Categories</router-link>
+          <router-link to="/catalogue" @click="toggleMenu" exact-active-class="mobile-active-link">Catalogue</router-link>
+          <router-link to="/about" @click="toggleMenu" exact-active-class="mobile-active-link">About Us</router-link>
+          <router-link to="/contact" @click="toggleMenu" exact-active-class="mobile-active-link">Contact Us</router-link>
         </div>
       </div>
     </transition>
   </nav>
 </template>
 
-<style lang="scss" scoped>
-nav {
-  background: #4A6052;
-  box-shadow: 0 2px 10px #00000022;
+<style scoped lang="scss">
+.nav-item {
+  position: relative;
+  transition: color 0.3s;
 }
 
-// ✅ Smooth Transition
-.mobile-dropdown {
-  background-color: white;
-  border-top: 1px solid #e5e7eb;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  max-height: 300px;
-  opacity: 1;
-  transition: all 0.7s ease-in-out;
+.nav-item:hover {
+  color: #ddd;
 }
 
-// ✅ Transition Animations
+// ✅ Link Active Style (Desktop)
+.active-link {
+  font-weight: bold;
+  color: #B5A58A !important;
+}
+
+// ✅ Link Active Style (Mobile)
+.mobile-active-link {
+  font-weight: bold;
+  color: #4A6052;
+}
+
+// Mobile Menu Transition
 .mobile-fade-enter-from,
 .mobile-fade-leave-to {
   max-height: 0;
@@ -100,10 +99,5 @@ nav {
 .mobile-fade-leave-from {
   max-height: 300px;
   opacity: 1;
-}
-
-.router-link-active {
-  color: #000;
-  font-weight: bold;
 }
 </style>
