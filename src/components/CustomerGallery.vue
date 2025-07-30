@@ -77,6 +77,24 @@ const galleryItems = ref([
       "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753697931/dressing-room/A67I6969-Edit.jpg",
     ],
   },
+  {
+    id: "bath-room",
+    name: "Bathrooms",
+    image:
+      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753878536/TFQ00049_ljlae2.jpg", // Placeholder
+    gallery: [
+      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753878536/TFQ00049_ljlae2.jpg",
+    ],
+  },
+  {
+    id: "living-room",
+    name: "Living Rooms",
+    image:
+      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879227/TFQ00037_v5vadm.jpg", // Placeholder
+    gallery: [
+      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879227/TFQ00037_v5vadm.jpg",
+    ],
+  },
 ]);
 
 const lightboxImages = computed(() => {
@@ -100,9 +118,8 @@ const hideLightbox = () => {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  margin: 4rem 0;
-  padding: 0 1rem;
-  background-color: var(--color-white);
+  padding: 1rem;
+  background: transparent;
 }
 
 .heading {
@@ -110,6 +127,8 @@ const hideLightbox = () => {
   line-height: 1.3;
   margin-bottom: 1.5rem;
   text-align: center;
+  color:white;
+
 }
 
 .image-grid {

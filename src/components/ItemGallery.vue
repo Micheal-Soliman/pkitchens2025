@@ -59,7 +59,7 @@ const itemId = route.params.id;
 // تحديد الفئة بناءً على الـ itemId
 const categoryInfo = computed(() => {
   if (itemId.includes('Kitchen') || itemId.includes('ARKOPA') || itemId.includes('Glossy') || 
-      itemId.includes('LG MATT') || itemId.includes('Matt plus') || 
+      itemId.includes('LG MATT') || itemId.includes('Matt plus') || itemId.includes('Lumber-J Matt') || 
       itemId.includes('SoftTouch') || itemId.includes('UV-LAK')) {
     return { name: 'Kitchen', slug: 'kitchens' };
   } else if (itemId.includes('Dressing')) {
@@ -68,6 +68,10 @@ const categoryInfo = computed(() => {
     return { name: 'Furniture', slug: 'furniture' };
   } else if (itemId.includes('Tv-Unit')) {
     return { name: 'TV Units', slug: 'tv-unit' };
+  }else if (itemId.includes('Bath-Rooms')) {
+    return { name: 'Bathrooms', slug: 'bath-room' };
+  }else if (itemId.includes('Living-Rooms')) {
+    return { name: 'Living Rooms', slug: 'living-room' };
   }
   return { name: 'Other', slug: 'other' };
 });
@@ -218,6 +222,21 @@ const allGalleryMedia = {
     { type: 'video', url: "https://res.cloudinary.com/dmt7nqvc0/video/upload/v1753792370/Aref_Kitchen_biged4.mp4", format: 'mp4' }
 
   ],
+  'Lumber-J Matt': [
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884630/TFQ00022_fmyfou.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884716/TFQ00017_hwhigu.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884723/TFQ00036_zb0nd3.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884726/TFQ00018_xhymwl.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884879/TFQ00031_tpnbl5.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884882/TFQ00024_dofz9k.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884871/TFQ00035_sevvj3.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884878/TFQ00033_fygdh7.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884829/TFQ00027_vibh7r.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884865/TFQ00028_shgu9l.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884757/TFQ00019_qhqyra.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884777/TFQ00029_ceb8lw.jpg" },
+
+  ],
   // Dressing room subcategories
   'Dressing_Kronospan': [
     { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753697931/dressing-room/A67I6969-Edit.jpg" },
@@ -303,7 +322,24 @@ const allGalleryMedia = {
     { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753792292/Copy_of_A29I5892_lijfat.jpg" },
     { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753792297/Copy_of_A29I5888-Edit_cbw3yw.jpg" },
     { type: 'video', url: "https://res.cloudinary.com/dmt7nqvc0/video/upload/v1753793323/Copy_of_tv_unit_l7jsq5.mp4", format: 'mp4' }
-  ]
+  ],
+  'Bath-Rooms': [
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753878536/TFQ00049_ljlae2.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753878539/TFQ00053_d0zda7.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753878501/TFQ00052_vmsjux.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753878535/TFQ00051_ugu40q.jpg" },
+  ],
+  'Living-Rooms': [
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879227/TFQ00037_v5vadm.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879246/TFQ00047_ibyhbs.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879250/TFQ00039_ih1ja7.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879270/TFQ00043_e2ar1e.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879290/TFQ00040_mbgr2r.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879312/TFQ00046_isv3yb.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879315/TFQ00045_fq53cm.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879333/TFQ00044_nphudg.jpg" },
+    { type: 'image', url: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879336/TFQ00054_jr0s0y.jpg" },
+  ],
 };
 
 const itemName = computed(() => {
@@ -409,7 +445,7 @@ useHead({
 .item-gallery-wrapper {
   padding-top: 90px;
   min-height: calc(100vh - 0px);
-  background: #fff;
+  background: linear-gradient(to bottom, #8C7B60, #B5A58A);
   padding-bottom: 2rem;
   display: flex;
   align-items: flex-start;
@@ -420,9 +456,9 @@ useHead({
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  background: #fff;
+  background: #B5A58A;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
   padding: 2.5rem 1.5rem;
   position: relative;
   margin-top: 50px;
@@ -431,7 +467,7 @@ useHead({
 .gallery-title {
   font-size: 2.2rem;
   font-family: 'Helvetica-Bold', sans-serif;
-  color: var(--color-title);
+  color: white;
   text-align: center;
   margin-bottom: 2.5rem;
   letter-spacing: 1px;
@@ -618,19 +654,19 @@ useHead({
 }
 
 .breadcrumb a {
-  color: var(--color-primary);
+  color: white;
   text-decoration: none;
   transition: color 0.3s;
   font-weight: 500;
 }
 
 .breadcrumb a:hover {
-  color: var(--color-accent);
+  color: white;
   text-decoration: underline;
 }
 
 .breadcrumb [aria-current="page"] {
-  color: #444;
+  color: white;
   font-weight: 600;
 }
 

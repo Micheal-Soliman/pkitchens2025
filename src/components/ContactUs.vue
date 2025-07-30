@@ -41,7 +41,7 @@
 .contact-wrapper {
   padding-top: 90px;
   min-height: calc(100vh - 0px);
-  background: #fff;
+  background: linear-gradient(to bottom, #8C7B60, #B5A58A);
   padding-bottom: 2rem;
   display: flex;
   align-items: flex-start;
@@ -51,28 +51,28 @@
   max-width: 700px;
   margin: 0 auto;
   width: 100%;
-  background: #fff;
+  background: #B5A58A;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
   padding: 2.5rem 1.5rem;
   margin-top: 50px;
 }
 .contact-title {
   font-size: 2.2rem;
   font-family: 'Helvetica-Bold', sans-serif;
-  color: var(--color-title);
+  color:white;
   text-align: center;
   margin-bottom: 2.5rem;
   letter-spacing: 1px;
 }
 .contact-info {
   margin-bottom: 2rem;
-  background: #fafafa;
+  background: transparent;
   border-radius: 1rem;
   padding: 1.2rem 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.04); */
   font-size: 1rem;
-  color: var(--color-title);
+  color:white;
 }
 .contact-info p {
   margin: 0.3rem 0;
@@ -80,9 +80,10 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  
 }
 .contact-info a {
-  color: var(--color-highlight);
+  color:white;
   text-decoration: none;
 }
 .contact-info a:hover {

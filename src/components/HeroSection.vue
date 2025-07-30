@@ -58,7 +58,7 @@ const slides = ref([
     id: 1,
     image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753700387/kitchens/DSC05847.jpg",
     preHeading: "DESIGN AND ORDER YOUR NEW KITCHEN ONLINE TODAY",
-    mainHeading: "Bespoke & made to measure<br>handmade kitchen design",
+    mainHeading: "Custom-made & made to measure",
   },
   {
     id: 2,

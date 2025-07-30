@@ -34,6 +34,8 @@ const categories = [
   { id: 'furniture', name: 'Furniture' },
   { id: 'dressing-room', name: 'Dressing Rooms' },
   { id: 'tv-unit', name: 'TV Units' },
+  { id: 'bath-room', name: 'Bathrooms' },
+  { id: 'living-room', name: 'Living Rooms' },
 ];
 
 // Complete data from your JSON
@@ -88,6 +90,13 @@ const allItems = {
       aos: 'fade-up',
       delay: '700'
     },
+    {
+      id: 'Lumber-J Matt',
+      name: 'Lumber-J Matt',
+      image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884726/TFQ00018_xhymwl.jpg",
+      aos: 'fade-up',
+      delay: '800'
+    },
   ],
   'furniture': [
     {
@@ -121,8 +130,26 @@ const allItems = {
       image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753697931/dressing-room/A67I6969-Edit.jpg", // Placeholder
       aos: 'fade-up',
       delay: '100'
-    }
-  ]
+    },
+  ],
+  'bath-room': [
+    {
+      id: 'Bath-Rooms',
+      name: 'Bathrooms Collection',
+      image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753878536/TFQ00049_ljlae2.jpg", // Placeholder
+      aos: 'fade-up',
+      delay: '100'
+    },
+  ],
+  'living-room': [
+    {
+      id: 'Living-Rooms',
+      name: 'Living Rooms Collection',
+      image: "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753879227/TFQ00037_v5vadm.jpg", // Placeholder
+      aos: 'fade-up',
+      delay: '100'
+    },
+  ],
 };
 
 const categoryName = computed(() => {
@@ -144,7 +171,7 @@ useHead({
 .category-items-wrapper {
   padding-top: 90px;
   min-height: calc(100vh - 0px);
-  background: #fff;
+  background: linear-gradient(to bottom, #8C7B60, #B5A58A);
   padding-bottom: 2rem;
   display: flex;
   align-items: flex-start;
@@ -155,9 +182,9 @@ useHead({
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  background: #fff;
+  background: #B5A58A;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
   padding: 2.5rem 1.5rem;
   margin-top: 50px;
 }
@@ -165,7 +192,7 @@ useHead({
 .category-items-title {
   font-size: 2.2rem;
   font-family: 'Helvetica-Bold', sans-serif;
-  color: var(--color-title);
+  color:white;
   text-align: center;
   margin-bottom: 2.5rem;
   letter-spacing: 1px;
@@ -270,12 +297,12 @@ useHead({
 }
 
 .step.active {
-  background-color: #4a6052;
+  background-color: #8C7B60;
   color: #fff;
 }
 
 .step:hover {
-  background-color: #4a6052;
+  background-color: #8C7B60;
   color: #fff;
 }
 </style>

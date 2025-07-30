@@ -17,6 +17,8 @@
             <li class="footer-link"><router-link to="/" @click="scrollToTop">Home</router-link></li>
             <li class="footer-link"><router-link to="/category/tv-unit" @click="scrollToTop">TV Units</router-link></li>
             <li class="footer-link"><router-link to="/category/dressing-room" @click="scrollToTop">Dressing Rooms</router-link></li>
+            <li class="footer-link"><router-link to="/category/bath-room" @click="scrollToTop">Bathrooms</router-link></li>
+            <li class="footer-link"><router-link to="/category/living-room" @click="scrollToTop">Living Rooms</router-link></li>
             <li class="footer-link"><router-link to="/contact" @click="scrollToTop">Contact Us</router-link></li>
             <li class="footer-link"><router-link to="/category/furniture" @click="scrollToTop">Furniture</router-link></li>
             <li class="footer-link"><router-link to="/about" @click="scrollToTop">About Us</router-link></li>

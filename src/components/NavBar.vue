@@ -7,6 +7,10 @@ const toggleMenu = async () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
   await nextTick();
 };
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 </script>
 
 <template>
@@ -15,14 +19,14 @@ const toggleMenu = async () => {
       <div class="flex justify-between items-center h-16 sm:h-[90px]">
         <!-- Left Nav (Desktop) -->
         <div class="hidden md:flex items-center space-x-6 text-white uppercase text-sm">
-          <router-link to="/" class="nav-item" exact-active-class="active-link">Home</router-link>
-          <router-link to="/categories" class="nav-item" exact-active-class="active-link">Categories</router-link>
-          <router-link to="/catalogue" class="nav-item" exact-active-class="active-link">Catalogue</router-link>
+          <router-link to="/" class="nav-item" exact-active-class="active-link" @click="scrollToTop">Home</router-link>
+          <router-link to="/categories" class="nav-item" exact-active-class="active-link" @click="scrollToTop">Categories</router-link>
+          <router-link to="/catalogue" class="nav-item" exact-active-class="active-link" @click="scrollToTop">Catalogue</router-link>
         </div>
 
         <!-- Center Logo -->
         <div class="flex justify-center flex-1 absolute left-0 right-0 pointer-events-none">
-          <router-link to="/" class="pointer-events-auto">
+          <router-link to="/" class="pointer-events-auto" @click="scrollToTop">
             <img src="@/assets/images/brand-logo.png" alt="Logo" class="h-14 sm:h-20" />
           </router-link>
         </div>
@@ -30,8 +34,8 @@ const toggleMenu = async () => {
         <!-- Right Nav + Mobile Toggle -->
         <div class="flex items-center space-x-6">
           <div class="hidden md:flex text-white uppercase text-sm space-x-6">
-            <router-link to="/about" class="nav-item" exact-active-class="active-link">About Us</router-link>
-            <router-link to="/contact" class="nav-item" exact-active-class="active-link">Contact Us</router-link>
+            <router-link to="/about" class="nav-item" exact-active-class="active-link" @click="scrollToTop">About Us</router-link>
+            <router-link to="/contact" class="nav-item" exact-active-class="active-link" @click="scrollToTop">Contact Us</router-link>
           </div>
           <!-- Mobile Toggle -->
           <div class="md:hidden">
@@ -50,11 +54,11 @@ const toggleMenu = async () => {
     <transition name="mobile-fade">
       <div v-if="isMobileMenuOpen" class="md:hidden bg-white text-gray-800 shadow-lg">
         <div class="flex flex-col px-4 py-4 space-y-3 text-sm uppercase tracking-wide">
-          <router-link to="/" @click="toggleMenu" exact-active-class="mobile-active-link">Home</router-link>
-          <router-link to="/categories" @click="toggleMenu" exact-active-class="mobile-active-link">Categories</router-link>
-          <router-link to="/catalogue" @click="toggleMenu" exact-active-class="mobile-active-link">Catalogue</router-link>
-          <router-link to="/about" @click="toggleMenu" exact-active-class="mobile-active-link">About Us</router-link>
-          <router-link to="/contact" @click="toggleMenu" exact-active-class="mobile-active-link">Contact Us</router-link>
+          <router-link to="/" @click="toggleMenu(); scrollToTop()" exact-active-class="mobile-active-link">Home</router-link>
+          <router-link to="/categories" @click="toggleMenu(); scrollToTop()" exact-active-class="mobile-active-link">Categories</router-link>
+          <router-link to="/catalogue" @click="toggleMenu(); scrollToTop()" exact-active-class="mobile-active-link">Catalogue</router-link>
+          <router-link to="/about" @click="toggleMenu(); scrollToTop()" exact-active-class="mobile-active-link">About Us</router-link>
+          <router-link to="/contact" @click="toggleMenu(); scrollToTop()" exact-active-class="mobile-active-link">Contact Us</router-link>
         </div>
       </div>
     </transition>

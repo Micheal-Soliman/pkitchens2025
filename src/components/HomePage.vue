@@ -1,8 +1,8 @@
 <template>
-  <div style="margin-top:90px;">
+  <div class="mt-16 sm:mt-20 md:mt-[90px] overflow-hidden bg-gradient-to-b from-[#8C7B60] to-[#B5A58A]">
     <HeroSection />
     <DiscoverSection class="mt-1" data-aos="fade-right" data-aos-delay="200" />
-    <!-- <TestimonialSection data-aos="fade-up" data-aos-offset="150" /> -->
+    <TestimonialSection data-aos="fade-left" data-aos-offset="150" />
     <CustomerGallery />
   </div>
 </template>
@@ -19,4 +19,4 @@ useHead({
     { name: 'description', content: 'Discover bespoke, luxury handmade kitchens. Explore our gallery, testimonials, and more at P Kitchen.' }
   ]
 });
-</script> 
+</script>

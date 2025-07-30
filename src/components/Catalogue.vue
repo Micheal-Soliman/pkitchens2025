@@ -56,7 +56,7 @@ useHead({
 .catalogue-wrapper {
   padding-top: 90px;
   min-height: calc(100vh - 0px);
-  background: #fff;
+  background: linear-gradient(to bottom, #8C7B60, #B5A58A);
   padding-bottom: 2rem;
   display: flex;
   align-items: flex-start;
@@ -66,15 +66,16 @@ useHead({
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  background: #fff;
+  background: #B5A58A;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
   padding: 2.5rem 1.5rem;
+  margin-top: 50px;
 }
 .catalogue-title {
   font-size: 2.2rem;
   font-family: 'Helvetica-Bold', sans-serif;
-  color: var(--color-title);
+  color:white;
   text-align: center;
   margin-bottom: 2.5rem;
   letter-spacing: 1px;

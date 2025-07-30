@@ -59,7 +59,7 @@ useHead({
 .about-us-wrapper {
   padding-top: 90px;
   min-height: calc(100vh - 0px);
-  background: #fff;
+  background: linear-gradient(to bottom, #8C7B60, #B5A58A);
   padding-bottom: 2rem;
   display: flex;
   align-items: flex-start;
@@ -70,9 +70,9 @@ useHead({
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  background: #fff;
+  background: #B5A58A;
   border-radius: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
   padding: 2.5rem 1.5rem;
   margin-top: 40px;
 }
@@ -80,7 +80,7 @@ useHead({
 .about-title {
   font-size: 3rem;
   font-family: 'Helvetica-Bold', sans-serif;
-  color: var(--color-title);
+  color:white;
   text-align: center;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
@@ -88,7 +88,7 @@ useHead({
 
 .about-description {
   font-size: 1.25rem;
-  color: var(--color-body);
+  color:white;
   text-align: center;
   margin-bottom: 3rem;
   line-height: 2.2rem;
@@ -120,14 +120,14 @@ useHead({
 
 .about-text h2 {
   font-size: 2rem;
-  color: var(--color-highlight);
+  color:white;
   margin-bottom: 0.5rem;
   font-family: 'Helvetica-Bold', sans-serif;
 }
 
 .about-text p {
   font-size: 1.1rem;
-  color: var(--color-body);
+  color:white;
   margin-bottom: 1.2rem;
 }
 
@@ -138,7 +138,7 @@ useHead({
 
 .about-text li {
   font-size: 1rem;
-  color: var(--color-title);
+  color:white;
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;

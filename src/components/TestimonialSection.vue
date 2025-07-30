@@ -1,196 +1,192 @@
 <template>
-  <div class="testimonial-slider relative" @mouseenter="pauseAutoPlay" @mouseleave="resumeAutoPlay">
-    <div class="slider-container flex flex-col items-center">
-      <p class="text-highlight uppercase font-body">what our customers say</p>
-      <h2 class="heading font-bold mb-4 text-title">
-        Over 35 years experience designing handmade kitchens
-      </h2>
-
-      <div class="testimonial-wrapper flex items-start justify-between mb-4 sm:mb-6">
-        <!-- Left Navigation Arrow -->
-        <button @click="prevSlide" class="nav-arrow left-arrow" aria-label="Previous testimonial">
-          <svg viewBox="0 0 37 71">
-            <path
-              d="M34.6482 70.0035L0.707107 36.0623C0.51957 35.8748 0.414214 35.6204 0.414214 35.3552C0.414214 35.09 0.51957 34.8357 0.707107 34.6481L34.6482 0.706993C34.8358 0.519457 35.0901 0.414099 35.3553 0.414099C35.6206 0.414099 35.8749 0.519457 36.0624 0.706993C36.25 0.894529 36.3553 1.14888 36.3553 1.4141C36.3553 1.67932 36.25 1.93367 36.0624 2.12121L2.82843 35.3552L36.0624 68.5892C36.25 68.7768 36.3553 69.0311 36.3553 69.2964C36.3553 69.5616 36.25 69.8159 36.0624 70.0035C35.8749 70.191 35.6206 70.2964 35.3553 70.2964C35.0901 70.2964 34.8358 70.191 34.6482 70.0035Z"
-              fill="#D4B254"
-            />
-          </svg>
-        </button>
-
-        <!-- Testimonial Content -->
-        <transition name="fade" mode="out-in">
-          <div :key="currentIndex" class="testimonial-content">
-            <blockquote class="quote font-normal mb-4">"{{ currentTestimonial.quote }}"</blockquote>
-            <cite class="customer font-normal"> {{ currentTestimonial.customer }}</cite>
-          </div>
+  <div class="discover flex flex-col lg:flex-row gap-8 items-center">
+    <!-- النص -->
+    <div class="info-wrapper w-full lg:w-1/2 px-4">
+      <h2 class="text-3xl lg:text-4xl font-bold text-title mt-2 mb-4 heading">
+        {{ mainTitle }}
+        <br />
+        <transition name="slide-fade" mode="out-in">
+          <span :key="currentText" class="subtitle-block">
+            {{ currentText }}
+          </span>
         </transition>
+      </h2>
+      <p class="body-text font-normal mb-6">
+        We bring your kitchen dreams to life — with smart designs, quality craftsmanship, and attention to every detail.
+        <br />
+        Where kitchen dreams come true. Designed to fit your life, your space, and your style.
+        <br />
+        <span style="display: block; margin-top: 0.5rem">
+          At P.Kitchen, we make kitchen dreams come true - with thoughtful design, quality craftsmanship, and a passion for every detail.
+        </span>
+      </p>
+      <router-link to="/contact" class="btn-primary btn-discover-small">Contact Us</router-link>
+    </div>
 
-        <!-- Right Arrow -->
-        <button @click="nextSlide" class="nav-arrow right-arrow" aria-label="Next testimonial">
-          <svg viewBox="0 0 37 71">
-            <path
-              d="M2.06233 70.0036L36.0035 36.0624C36.191 35.8749 36.2964 35.6206 36.2964 35.3553C36.2964 35.0901 36.191 34.8358 36.0035 34.6482L2.06233 0.707107C1.87479 0.51957 1.62044 0.414213 1.35522 0.414213C1.09001 0.414213 0.835654 0.51957 0.648118 0.707107C0.460581 0.894643 0.355224 1.149 0.355224 1.41421C0.355224 1.67943 0.460581 1.93378 0.648118 2.12132L33.8821 35.3553L0.648118 68.5894C0.460581 68.7769 0.355224 69.0312 0.355224 69.2965C0.355224 69.5617 0.460581 69.816 0.648118 70.0036C0.835654 70.1911 1.09001 70.2965 1.35522 70.2965C1.62044 70.2965 1.87479 70.1911 2.06233 70.0036Z"
-              fill="#D4B254"
-            />
-          </svg>
-        </button>
+    <!-- الفيديو -->
+    <div class="video-wrapper w-full lg:w-1/2 px-4">
+      <div class="responsive-video">
+        <video
+          controls
+          muted
+          playsinline
+        >
+          <source src="https://res.cloudinary.com/dmt7nqvc0/video/upload/v1753879865/P_KITCHEN_-_RAWD_FINALLLLLLLLLL_hwdnhx.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
-
-      <button class="btn-primary">FREQUENTLY ASKED QUESTIONS</button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useSlider } from "@/composables/useSlider";
+import { ref, onMounted } from 'vue';
 
-const testimonials = ref([
-  {
-    quote:
-      "Since my first contact I have received a very high level of customer service and advice with my kitchen plans. Ben responded very quickly to all of my emails and delivery of the kitchen was as planned.",
-    customer: "Ann, Dundee",
-  },
-  {
-    quote:
-      "The craftsmanship is exceptional. Our new kitchen is not only beautiful but also incredibly functional. The team was professional and a pleasure to work with from start to finish.",
-    customer: "John & Jane, Edinburgh",
-  },
-  {
-    quote:
-      "We are absolutely thrilled with the final result. It has completely transformed our home. The attention to detail is second to none. Highly recommended!",
-    customer: "Sarah, Glasgow",
-  },
-]);
+const mainTitle = ref('Your Kitchen, Your Story.');
+const texts = [
+  'Designed for Living. Built for You.',
+  'Tailored to Your Style.',
+  'Crafted with Passion.',
+  'Every Detail Matters.',
+];
+const currentText = ref(texts[0]);
+let index = 0;
 
-// slider composable
-const {
-  currentIndex,
-  currentItem: currentTestimonial,
-  nextSlide,
-  prevSlide,
-  pauseAutoPlay,
-  resumeAutoPlay,
-} = useSlider(testimonials, { autoplay: true, interval: 5000, transitionType: "fade" });
+onMounted(() => {
+  setInterval(() => {
+    index = (index + 1) % texts.length;
+    currentText.value = texts[index];
+  }, 4000);
+});
 </script>
 
 <style scoped>
-.testimonial-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-inactive);
-  padding: 3rem 2rem;
-  text-align: center;
-  min-height: 60vh;
-}
-
-.slider-container {
-  max-width: 60%;
-  width: 100%;
-}
-
-.slider-container h2 {
-  max-width: 600px;
-  line-height: 42px;
-  font-size: 32px;
-  letter-spacing: 0;
-  font-family: "Helvetica-Bold", sans-serif;
-}
-
-.testimonial-wrapper {
-  width: 100%;
-}
-
-.testimonial-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.quote {
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: 0;
-  font-family: "Helvetica", sans-serif;
-}
-
-.customer {
-  font-size: 15px;
-  line-height: 28px;
-  letter-spacing: 0;
-  font-style: normal;
-}
-
-.nav-arrow {
+/* Layout */
+.discover {
+  padding: 2rem;
   background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 1rem;
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+  align-items: center;
 }
 
-.nav-arrow:hover {
-  transform: scale(1.1);
+.heading {
+  font-size: 42px;
+  line-height: 52px;
+  font-family: "Helvetica-Bold", sans-serif;
+  color: white;
 }
 
-.nav-arrow svg {
-  width: 71px;
-  height: 71px;
+.subtitle-block {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  color: #f3f3f3;
+  display: block;
 }
 
+.body-text {
+  font-size: 16px;
+  line-height: 30px;
+  color: white;
+  max-width: 100%;
+}
+
+/* Responsive Video Container */
+.responsive-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.responsive-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Button */
+.btn-discover-small {
+  width: auto !important;
+  padding: 1.3em 2em !important;
+  font-size: 1.08rem !important;
+  border-radius: 20px !important;
+  letter-spacing: 1.2px !important;
+  display: inline-block !important;
+  line-height: 1.2 !important;
+  background-color: #8C7B60;
+  color: white;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-discover-small:hover {
+  background-color: #B5A58A;
+}
+
+/* Animations */
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.6s ease;
+}
+
+.slide-fade-enter-from {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+/* Responsive Tweaks */
 @media (max-width: 991px) {
-  .testimonial-slider {
-    padding: 3rem 1rem;
+  .discover {
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: center;
   }
 
-  .main-heading {
-    font-size: 1.75rem;
+  .heading {
+    font-size: 32px;
+    line-height: 40px;
   }
 
-  .slider-container {
-    max-width: 90%;
-  }
-
-  .testimonial-content {
+  .body-text {
+    font-size: 14.5px;
+    line-height: 24px;
     max-width: 100%;
   }
 
-  .quote {
-    font-size: 1rem;
+  .btn-discover-small {
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 576px) {
-  .testimonial-wrapper {
-    flex-direction: column;
-  }
-  .nav-arrow {
-    position: absolute;
-    top: 1rem;
-    border-radius: var(--radius-pill);
-    padding: 0.75rem;
-    border: 2px solid var(--color-highlight);
-    background-color: var(--color-white);
-    svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--color-highlight);
-      stroke-width: 5;
-    }
-  }
-
-  .right-arrow {
-    right: 1rem;
-  }
-  .left-arrow {
-    right: 4.5rem;
-  }
-}
 @media (max-width: 480px) {
-  .testimonial-slider {
-    padding: 4.5rem 0 3rem 0;
+  .heading {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .body-text {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .btn-discover-small {
+    font-size: 0.85rem !important;
+    padding: 0.75em 1.2em !important;
+  }
+
+  .info-wrapper {
+    text-align: center;
   }
 }
 </style>
