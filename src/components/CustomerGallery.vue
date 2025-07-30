@@ -72,9 +72,9 @@ const galleryItems = ref([
     id: "tv-unit",
     name: "TV Units",
     image:
-      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753697931/dressing-room/A67I6969-Edit.jpg", // Placeholder
+      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753792110/Copy_of_A29I5918_lqqbyk.jpg", // Placeholder
     gallery: [
-      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753697931/dressing-room/A67I6969-Edit.jpg",
+      "https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753792110/Copy_of_A29I5918_lqqbyk.jpg",
     ],
   },
   {
