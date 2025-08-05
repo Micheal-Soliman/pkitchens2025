@@ -15,14 +15,34 @@
           <h4 class="footer-heading">Sections</h4>
           <ul class="footer-list footer-list-columns">
             <li class="footer-link"><router-link to="/" @click="scrollToTop">Home</router-link></li>
-            <li class="footer-link"><router-link to="/category/tv-unit" @click="scrollToTop">TV Units</router-link></li>
-            <li class="footer-link"><router-link to="/category/dressing-room" @click="scrollToTop">Dressing Rooms</router-link></li>
-            <li class="footer-link"><router-link to="/category/bath-room" @click="scrollToTop">Bathrooms</router-link></li>
-            <li class="footer-link"><router-link to="/category/living-room" @click="scrollToTop">Living Rooms</router-link></li>
-            <li class="footer-link"><router-link to="/contact" @click="scrollToTop">Contact Us</router-link></li>
-            <li class="footer-link"><router-link to="/category/furniture" @click="scrollToTop">Furniture</router-link></li>
-            <li class="footer-link"><router-link to="/about" @click="scrollToTop">About Us</router-link></li>
-            <li class="footer-link"><router-link to="/category/kitchens" @click="scrollToTop">Kitchens</router-link></li>
+            <li class="footer-link">
+              <router-link to="/category/tv-unit" @click="scrollToTop">TV Units</router-link>
+            </li>
+            <li class="footer-link">
+              <router-link to="/category/dressing-room" @click="scrollToTop"
+                >Dressing Rooms</router-link
+              >
+            </li>
+            <li class="footer-link">
+              <router-link to="/category/bath-room" @click="scrollToTop">Bathrooms</router-link>
+            </li>
+            <li class="footer-link">
+              <router-link to="/category/living-room" @click="scrollToTop"
+                >Living Rooms</router-link
+              >
+            </li>
+            <li class="footer-link">
+              <router-link to="/contact" @click="scrollToTop">Contact Us</router-link>
+            </li>
+            <li class="footer-link">
+              <router-link to="/category/furniture" @click="scrollToTop">Furniture</router-link>
+            </li>
+            <li class="footer-link">
+              <router-link to="/about" @click="scrollToTop">About Us</router-link>
+            </li>
+            <li class="footer-link">
+              <router-link to="/category/kitchens" @click="scrollToTop">Kitchens</router-link>
+            </li>
           </ul>
         </div>
         <!-- Contact Info -->
@@ -30,12 +50,22 @@
           <h4 class="footer-heading">Contact</h4>
           <ul class="footer-list">
             <li class="footer-link">
-              <a href="https://wa.me/+201153002700" target="_blank" rel="noopener" aria-label="WhatsApp">
-                Phone: +20 1153002700
+              <a
+                href="https://wa.me/+201153002700"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+              >
+                WhatsApp: +20 1153002700
               </a>
             </li>
             <li class="footer-link">
-              <a href="https://www.google.com/maps?q=Furniture+Point+Mall,1st+Settlement,New+Cairo" target="_blank" rel="noopener" aria-label="Location">
+              <a
+                href="https://www.google.com/maps/place/Pkitchen/@30.0446655,31.5230897,17z/data=!3m1!4b1!4m6!3m5!1s0x1458196a95442395:0x485c54c3b950aa15!8m2!3d30.0446655!4d31.5230897!16s%2Fg%2F11wmjm433g?entry=ttu&g_ep=EgoyMDI1MDgwMy4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener"
+                aria-label="Location"
+              >
                 Address: Furniture Point Mall, 1st Settlement, New Cairo
               </a>
             </li>
@@ -59,7 +89,7 @@
 
 <script setup>
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 </script>
 

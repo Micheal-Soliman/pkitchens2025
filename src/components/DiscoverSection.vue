@@ -3,7 +3,7 @@
     <div class="w-full cover overflow-hidden">
       <img
         class="w-full h-full object-cover"
-        src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753789478/Copy_of_DSC06030_o8r8l6.jpg"
+        src="https://res.cloudinary.com/dmt7nqvc0/image/upload/v1753884726/TFQ00018_xhymwl.jpg"
         alt="Handmade kitchen"
       />
     </div>
@@ -46,14 +46,14 @@
   letter-spacing: 0;
   line-height: 52px;
   font-family: "Helvetica-Bold", sans-serif;
-  color:white;
+  color: white;
 }
 
 .body-text {
   font-size: 15px;
   letter-spacing: 0;
   line-height: 28px;
-  color:white;
+  color: white;
 }
 
 .cover img {
@@ -78,13 +78,13 @@
   letter-spacing: 1.2px !important;
   display: inline-block !important;
   line-height: 1.2 !important;
-  background-color: #8C7B60;
+  background-color: #8c7b60;
   color: white;
   font-weight: 600;
 }
 
 .btn-discover-small:hover {
-  background-color: #B5A58A;
+  background-color: #b5a58a;
 }
 
 /* ========== Responsive ========== */
